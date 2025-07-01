@@ -2,6 +2,8 @@
 
 So... you found my personal website repository! I'm Saleh, a Saudi programmer from Al-Qassim - yes, the land of the sweetest dates 🌴 - who loves turning ideas into code. This little corner of the internet is where I showcase who I am and what I'm passionate about.
 
+## 🚀 **[Visit My Live Website](https://2saleh1.github.io/personal-website/)** 🚀
+
 ## What You'll Find Here 🌟
 
 I built this website to be more than just another boring portfolio. It's got some cool stuff:
