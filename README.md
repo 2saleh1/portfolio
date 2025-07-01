@@ -15,7 +15,7 @@ I built this website to be more than just another boring portfolio. It's got som
 
 ## The Tech Stuff (For Fellow Nerds) 🛠️
 
-Built this baby with:
+Built this with:
 - **HTML5** - The foundation (obviously)
 - **CSS3** - Made it pretty with gradients and animations
 - **Vanilla JavaScript** - No frameworks needed, just pure JS magic
