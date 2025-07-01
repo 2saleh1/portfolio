@@ -31,7 +31,7 @@ my-website/
 ├── js/
 │   └── script.js          # The interactive goodness
 ├── images/
-│   └── profile.jpg        # My face (don't judge)
+│   └── profile.jpg        # 🏴‍☠️Monkey D. Luffy
 ├── videos/
 │   └── saudi-flag.mp4     # 🇸🇦 Pride!
 ├── certificates/
