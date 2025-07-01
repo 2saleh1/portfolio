@@ -48,8 +48,6 @@ my-website/
 3. Select main branch
 4. Boom! Your site is live
 
-### Got a Custom Domain?
-Just edit the `CNAME` file with your domain and configure your DNS. GitHub will handle the rest!
 
 ## The Cool Interactive Stuff 🎨
 
@@ -100,7 +98,7 @@ Press **M** and watch the magic happen. Yes, like THAT Matrix!
 **Glitch in the System** ⚡  
 Hit **G** for some cyberpunk vibes. Your screen might have a seizure (in a good way).
 
-**The Ancient Code** 🌈  
+**The Ancient Code** 🌈 
 Remember the Konami Code? **↑ ↑ ↓ ↓ ← → ← → B A**  
 Do it. Thank me later.
 
