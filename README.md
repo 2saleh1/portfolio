@@ -113,10 +113,5 @@ Those interest items? They're clickable. They like to party.
 **Cursor Magic** ✨  
 Move your mouse around. See those little dots? You're welcome.
 
-### Pro Gamer Tips 🎯
-- Matrix effect looks INSANE in fullscreen
-- The Konami code works anywhere on the site
-- Language preference saves automatically (because I'm thoughtful like that)
-- Scroll speed changes the parallax - physics!
 
 Built with ❤️ by Saleh
