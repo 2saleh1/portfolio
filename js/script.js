@@ -1,11 +1,5 @@
 // Smooth scrolling for anchor links
 document.addEventListener('DOMContentLoaded', function () {
-    // Create floating particles in the background
-    createFloatingParticles();
-
-    // Add cursor trail effect
-    createCursorTrail();
-
     // Add smooth scrolling
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
@@ -391,45 +385,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-// Floating particles function
-function createFloatingParticles() {
-    const particleContainer = document.createElement('div');
-    particleContainer.className = 'particles-container';
-    document.body.appendChild(particleContainer);
-
-    for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
-        particleContainer.appendChild(particle);
-    }
-}
-
-// Cursor trail effect
-function createCursorTrail() {
-    const trail = [];
-    const trailLength = 10;
-
-    for (let i = 0; i < trailLength; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'cursor-dot';
-        document.body.appendChild(dot);
-        trail.push(dot);
-    }
-
-    document.addEventListener('mousemove', function (e) {
-        trail.forEach((dot, index) => {
-            setTimeout(() => {
-                dot.style.left = e.clientX + 'px';
-                dot.style.top = e.clientY + 'px';
-                dot.style.opacity = (trailLength - index) / trailLength;
-            }, index * 10);
-        });
-    });
-}
 
 // Matrix rain effect
 let matrixActive = false;
