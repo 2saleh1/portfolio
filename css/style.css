@@ -966,9 +966,87 @@ p {
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     .contact-links a {
-        width: 90%;
-        padding: 14px 0;
+        width: auto;
+        padding: 18px 38px;
+        font-size: 1.18rem;
+    }
+
+    footer {
+        padding: 3vw 0;
+        margin-top: 0;
+    }
+
+    header h1,
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    p,
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    #top-nav {
+        flex-direction: row;
+        height: 60px;
+        padding: 0 2vw;
+    }
+
+    #top-nav ul {
+        gap: 2vw;
+        flex-wrap: nowrap;
+    }
+
+    #top-nav .nav-link {
         font-size: 1.05rem;
+        padding: 8px 18px;
+    }
+
+    #top-nav .language-toggle.nav-lang {
+        margin-left: 2vw;
+        margin-top: 0;
+    }
+
+    .certificates-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 4vw;
+        padding: 0 2vw;
+    }
+
+    .certificate-item {
+        padding: 40px 30px;
+    }
+
+    .certificate-frame {
+        width: 12vw;
+        min-width: 110px;
+        max-width: 160px;
+        height: 8vw;
+        min-height: 70px;
+        max-height: 110px;
+    }
+
+    .certificate-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .certificate-item p {
+        font-size: 1rem;
+    }
+
+    .view-certificate {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .language-toggle {
+        top: 20px;
+        right: 20px;
+    }
+
+    .lang-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 }
 
