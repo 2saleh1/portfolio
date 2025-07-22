@@ -8,14 +8,14 @@ So... you found my personal website repository! I'm Saleh, a Saudi programmer fr
 
 I built this website to be more than just another boring portfolio. It's got some cool stuff:
 
-- **Bilingual Magic**: Switch between English and Arabic -
-- **Smooth Animations**: Everything moves nicely because... why not make it pretty?
-- **My Story**: About me, what I love doing
-- **Skills That Actually Matter**: Real percentages of what I know (no fake 100% everywhere!)
-- **My Certificates**: The achievements I'm actually proud of
-- **Multiple Ways to Stalk Me**: Just kidding! But seriously, all my contact info is there
+- **Bilingual Magic**
+- **Smooth Animations** 
+- **My Story**
+- **My Skills**
+- **My Certificates**
+- **Multiple Ways to Stalk Me**
 
-## The Tech Stuff (For Fellow Nerds) 🛠️
+## The Tech Stuff 🛠️
 
 Built this with:
 - **HTML5** - The foundation
@@ -72,7 +72,6 @@ I'm pretty active on these platforms:
 
 ## 🤫 Psst... Secret Menu Unlocked!
 
-Okay, so I may have hidden some Easter eggs in the website. Don't tell everyone, but here's how to find them:
 
 ### The Hidden Superpowers 🎮
 
@@ -92,8 +91,6 @@ Click my face. Keep clicking.
 **Dancing Interests** 💃  
 Those interest items? They're clickable. They like to party.
 
-**Cursor Magic** ✨  
-Move your mouse around. See those little dots? You're welcome.
 
 
 Built with ❤️ by Saleh
