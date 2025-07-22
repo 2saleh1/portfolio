@@ -1125,24 +1125,34 @@ html[dir="rtl"] #top-nav ul {
 
 @media (max-width: 768px) {
     #top-nav {
-        flex-direction: column;
-        height: auto;
-        padding: 0.5vw 2vw;
+        flex-direction: row;
+        height: 60px;
+        padding: 0 2vw;
+        align-items: center;
     }
 
     #top-nav ul {
-        gap: 1vw;
-        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 2vw;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: auto;
+    }
+
+    #top-nav li {
+        align-items: center;
     }
 
     #top-nav .nav-link {
-        font-size: 0.95rem;
+        font-size: 1rem;
         padding: 6px 10px;
+        white-space: nowrap;
     }
 
     #top-nav .language-toggle.nav-lang {
-        margin-left: 0;
-        margin-top: 6px;
+        margin-left: 2vw;
+        margin-top: 0;
+        position: static;
     }
 }
 
