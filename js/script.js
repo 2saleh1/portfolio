@@ -443,25 +443,3 @@ function toggleMatrixRain() {
         }
     }, 10000);
 }
-
-// Easter eggs
-document.addEventListener('keydown', function (e) {
-    // Konami code easter egg (up, up, down, down, left, right, left, right, B, A)
-    const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-    window.konamiIndex = window.konamiIndex || 0;
-
-    if (e.keyCode === konamiCode[window.konamiIndex]) {
-        window.konamiIndex++;
-        if (window.konamiIndex === konamiCode.length) {
-            // Easter egg activated!
-            document.body.style.animation = 'rainbow 2s infinite';
-            setTimeout(() => {
-                document.body.style.animation = '';
-            }, 5000);
-            window.konamiIndex = 0;
-        }
-    } else {
-        window.konamiIndex = 0;
-    }
-});
-

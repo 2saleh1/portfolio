@@ -70,26 +70,6 @@ I'm pretty active on these platforms:
 
 ---
 
-## 🤫 Psst... Secret Menu Unlocked!
-
-
-### The Hidden Superpowers 🎮
-
-**Matrix Mode** 🟢  
-Press **M** and watch the magic happen. Yes, like THAT Matrix!
-
-**Glitch in the System** ⚡  
-Hit **G** for some cyberpunk vibes.
-
-**The Ancient Code** 
-Remember the Konami Code? **↑ ↑ ↓ ↓ ← → ← → B A**  
-
-
-**Profile Picture Shenanigans** 🔮  
-Click my face. Keep clicking. 
-
-**Dancing Interests** 💃  
-Those interest items? They're clickable. They like to party.
 
 
 
