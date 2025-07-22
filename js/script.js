@@ -88,9 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Update all elements with data-ar attributes
             document.querySelectorAll('[data-ar]').forEach(element => {
-                const arabicText = element.getAttribute('data-ar');
-                if (arabicText) {
-                    element.innerHTML = arabicText;
+                // Only update text if element does NOT contain an <i> tag
+                if (!element.querySelector('i')) {
+                    const arabicText = element.getAttribute('data-ar');
+                    if (arabicText) {
+                        element.textContent = arabicText;
+                    }
                 }
             });
 
@@ -111,9 +114,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Update all elements with data-en attributes
             document.querySelectorAll('[data-en]').forEach(element => {
-                const englishText = element.getAttribute('data-en');
-                if (englishText) {
-                    element.innerHTML = englishText;
+                if (!element.querySelector('i')) {
+                    const englishText = element.getAttribute('data-en');
+                    if (englishText) {
+                        element.textContent = englishText;
+                    }
                 }
             });
 
@@ -176,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     certificateItems.forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('certificate-animate');
-                        }, index * 150); // Staggered animation
+                        }, index * 10); // Staggered animation
                     });
                 }
             }
@@ -287,28 +292,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // REDUCED PARALLAX EFFECT - MUCH SLOWER MOVEMENT
+    // Highlight nav link for current section
     window.addEventListener('scroll', function () {
-        const scrolled = window.pageYOffset;
-        const video = document.getElementById('bg-video');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('#top-nav .nav-link');
+        let currentSectionId = '';
 
-        // Reduced video parallax speed from 0.5 to 0.2
-        if (video) {
-            video.style.transform = `translateY(${scrolled * 0.2}px) scale(1.1)`;
-        }
-
-        // MUCH REDUCED parallax for sections - changed from (index + 1) * 0.1 to * 0.02
-        document.querySelectorAll('section').forEach((section, index) => {
-            const speed = (index + 1) * 0.02; // REDUCED FROM 0.1 TO 0.02
-            section.style.transform = `translateY(${scrolled * speed}px)`;
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 80 && rect.bottom > 80) { // 80px offset for nav height
+                currentSectionId = section.id;
+            }
         });
 
-        // ALSO ADD PARALLAX TO FOOTER - VERY SUBTLE
-        const footer = document.querySelector('footer');
-        if (footer) {
-            footer.style.transform = `translateY(${scrolled * 0.03}px)`; // VERY SUBTLE MOVEMENT
-        }
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     });
+
 
     // Dynamic background color change based on scroll
     window.addEventListener('scroll', function () {
@@ -459,3 +464,4 @@ document.addEventListener('keydown', function (e) {
         window.konamiIndex = 0;
     }
 });
+
