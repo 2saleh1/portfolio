@@ -1129,6 +1129,10 @@ html[dir="rtl"] #top-nav ul {
         height: 60px;
         padding: 0 2vw;
         align-items: center;
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        white-space: nowrap;
+        /* Prevent wrapping */
     }
 
     #top-nav ul {
@@ -1137,10 +1141,13 @@ html[dir="rtl"] #top-nav ul {
         flex-wrap: nowrap;
         align-items: center;
         width: auto;
+        white-space: nowrap;
+        /* Prevent wrapping */
     }
 
     #top-nav li {
         align-items: center;
+        white-space: nowrap;
     }
 
     #top-nav .nav-link {
@@ -1153,6 +1160,8 @@ html[dir="rtl"] #top-nav ul {
         margin-left: 2vw;
         margin-top: 0;
         position: static;
+        flex-shrink: 0;
+        /* Prevent shrinking */
     }
 }
 
