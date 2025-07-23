@@ -41,12 +41,6 @@ Built this with:
 - Remembers your choice for next time
 - Proper Arabic reading direction support
 
-### Fun Things to Click/Hover
-- **My Profile Pic**: Click it! Something cool happens 😉
-- **Skill Bars**: They fill up when you scroll to them
-- **Certificate Frames**: Fancy rotating borders because I'm extra like that
-- **Interest Items**: Click them for a little dance
-- **Everything Else**: Just hover around, there are surprises everywhere
 
 ## Want to Make This Yours? 🔧
 
