@@ -2,7 +2,7 @@
 
 So... you found my personal website repository! I'm Saleh, a Saudi programmer from Al-Qassim 🌴 - who loves turning ideas into code. This little corner of the internet is where I showcase who I am and what I'm passionate about.
 
-## 🚀 **[Visit My Live Website](https://2saleh1.github.io/personal-website/)** 🚀
+## 🚀 **[Visit My Live Website](https://2saleh1.github.io/portfolio/)** 🚀
 
 ## What You'll Find Here 🌟
 
