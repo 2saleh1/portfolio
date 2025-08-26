@@ -169,24 +169,7 @@ html[dir="rtl"] body {
     text-align: right;
 }
 
-/* Remove these lines to prevent unwanted flipping/alignment: */
-/*
-html[dir="rtl"] .container {
-    direction: rtl;
-}
-html[dir="rtl"] .contact-links {
-    direction: rtl;
-}
-html[dir="rtl"] .certificates-grid {
-    direction: rtl;
-}
-html[dir="rtl"] .skills-grid {
-    direction: rtl;
-}
-html[dir="rtl"] #interests ul {
-    direction: rtl;
-}
-*/
+
 
 /* ARABIC FONT SUPPORT */
 html[dir="rtl"] body,
