@@ -1,7 +1,13 @@
 /* Body background */
 body {
-    background: linear-gradient(135deg, #232946 60%, #1a1a2e 100%);
-    color: #eaeaea;
+    font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    background: linear-gradient(145deg, #111111, #2d133d);
+    overflow-x: hidden;
+    cursor: auto;
+    padding-top: 60px;
 }
 
 /* Section backgrounds */
@@ -40,16 +46,9 @@ h2::after,
     box-shadow: 0 10px 30px rgba(108, 99, 255, 0.15);
 }
 
-/* Skills */
-.skill-item {
-    background: linear-gradient(135deg, #232946, #393e6d 80%, #6c63ff 100%);
-    color: #a0a7d1;
-    border: 3px solid #393e6d;
-}
 
-.skill-progress-bar {
-    background: linear-gradient(90deg, #6c63ff, #a0a7d1);
-}
+
+
 
 /* Certificates */
 #certificates {
@@ -72,23 +71,7 @@ h2::after,
     background: linear-gradient(90deg, #a0a7d1, #6c63ff, #232946);
 }
 
-/* Contact Section */
-#contact p {
-    color: #a0a7d1;
-}
 
-.contact-links a {
-    background: linear-gradient(90deg, #393e6d 40%, #6c63ff 100%);
-    border: 3px solid #6c63ff;
-    color: #eaeaea;
-}
-
-.contact-links a:hover {
-    background: linear-gradient(90deg, #6c63ff 60%, #a0a7d1 100%);
-    color: #232946;
-    border-color: #a0a7d1;
-    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.18);
-}
 
 /* Navigation Bar */
 #top-nav {
@@ -101,17 +84,9 @@ h2::after,
     color: #a0a7d1;
 }
 
-/* Language Button */
-.lang-btn {
-    background: linear-gradient(90deg, #393e6d 60%, #6c63ff 100%);
-    color: #eaeaea;
-    border: 2px solid #a0a7d1;
-}
 
-.lang-btn:hover {
-    background: linear-gradient(90deg, #6c63ff 60%, #a0a7d1 100%);
-    color: #232946;
-}
+
+
 
 /* Footer */
 footer {
@@ -149,6 +124,7 @@ footer {
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
+
 .lang-btn:hover {
     background: rgba(179, 157, 219, 0.9);
     color: #111111;
@@ -161,7 +137,7 @@ footer {
 }
 
 .lang-text {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* RTL SUPPORT FOR ARABIC */
@@ -184,7 +160,7 @@ html[dir="rtl"] a,
 html[dir="rtl"] li,
 html[dir="rtl"] span,
 html[dir="rtl"] .tagline {
-    font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-family: 'IBM Plex Sans Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
 }
 
 /* RESPONSIVE LANGUAGE TOGGLE */
@@ -207,15 +183,7 @@ html[dir="rtl"] .tagline {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #e0e0e0;
-    background: linear-gradient(145deg, #111111, #2d133d);
-    overflow-x: hidden;
-    cursor: auto;
-    padding-top: 60px;
-}
+
 
 /* Make .container responsive */
 .container {
@@ -236,9 +204,7 @@ header {
     background: none;
 }
 
-header::before {
-    background: linear-gradient(45deg, rgba(17, 17, 17, 0.8), rgba(45, 19, 61, 0.7));
-}
+
 
 #bg-video {
     position: absolute;
@@ -318,35 +284,26 @@ header::before {
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     margin-bottom: 15px;
-    background: linear-gradient(45deg, #e0e0e0, #b39ddb);
+    background: linear-gradient(45deg, #e0e0e0, rgb(255, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 1px 1px 8px #2d133d;
-    animation: glow 2s ease-in-out infinite alternate;
+    text-shadow: none;
+    animation: none;
 }
 
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    to {
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(102, 126, 234, 0.2);
-    }
-}
 
 .tagline {
-    font-size: 1.4rem;
+    font-size: 2rem;
     opacity: 0.95;
     min-height: 2em;
     border-right: 2px solid #b39ddb;
     padding-right: 5px;
     color: #b39ddb;
     animation: blink-cursor 1s infinite;
+    font-weight: 800;
 }
 
 @keyframes blink-cursor {
@@ -387,7 +344,7 @@ section:nth-child(odd) {
 
 /* h2 styles */
 h2 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-align: center;
     margin-bottom: 60px;
     position: relative;
@@ -421,14 +378,16 @@ h2::after {
     }
 }
 
+/* Paragraph text */
 p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    line-height: 2;
     margin-bottom: 25px;
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.8;
+
 }
 
 /* Enhanced Interests Section */
@@ -443,7 +402,7 @@ p {
 }
 
 #interests li {
-    background: linear-gradient(90deg, #393e6d 60%, #6c63ff 100%);
+    background: linear-gradient(135deg, #404b83, #393e6d 80%, #6c63ff 100%);
     color: #eaeaea;
     box-shadow: 0 10px 30px rgba(108, 99, 255, 0.15);
     padding: 20px 30px;
@@ -453,6 +412,7 @@ p {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    border: 2px solid #393e6d;
 }
 
 #interests li::before {
@@ -470,9 +430,12 @@ p {
     left: 100%;
 }
 
+
 #interests li:hover {
     transform: translateY(-12px) scale(1.08) rotateX(10deg);
     box-shadow: 0 20px 40px rgba(102, 126, 234, 0.5);
+    border-color: #6c63ff;
+    background: linear-gradient(135deg, #232946, #393e6d 60%, #6c63ff 100%);
 }
 
 #interests h2 {
@@ -532,6 +495,67 @@ p {
     }
 }
 
+/* Remove the current zigzag divider and replace with a background like "Get In Touch" */
+#interests {
+    background: linear-gradient(135deg, #000000 60%, #1e0b2a 80%, #6c63ff 100%);
+    color: #eaeaea;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remove these - delete the zigzag divider */
+#interests::before {
+    content: none;
+}
+
+#interests::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 15% 85%, rgba(108, 99, 255, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#interests .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+#skills {
+    background: linear-gradient(135deg, #0a0a14 60%, #251428 80%, #5653d1 100%);
+    color: #eaeaea;
+    position: relative;
+    overflow: hidden;
+}
+
+#skills::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 20% 30%, rgba(124, 67, 189, 0.15) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#skills .container {
+    position: relative;
+    z-index: 2;
+}
+
+
 /* Enhanced Skills Section */
 .skills-grid {
     display: grid;
@@ -575,6 +599,18 @@ p {
     filter: drop-shadow(0 4px 16px #6c63ff88);
 }
 
+
+
+/* Make sure all skill icons (both img and i elements) have consistent appearance */
+.skill-icon i,
+.skill-img {
+    font-size: 3rem;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    transition: filter 0.3s, transform 0.3s, color 0.3s;
+}
+
 /* Skill images hover effect */
 .skill-item:hover .skill-img {
     filter: drop-shadow(0 4px 16px #6c63ff88) brightness(1.15) contrast(1.1);
@@ -582,8 +618,9 @@ p {
     transition: filter 0.3s, transform 0.3s;
 }
 
+/* Skills section */
 .skill-name {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #a0a7d1;
     letter-spacing: 0.5px;
@@ -700,33 +737,26 @@ p {
 
 .certificate-item:hover .certificate-frame {
     transform: scale(1.08) rotateY(3deg);
-    /* REDUCED FROM 1.1 AND 5deg */
     box-shadow: 0 12px 28px rgba(124, 67, 189, 0.4);
-    /* REDUCED SHADOW */
 }
 
 .certificate-item:hover .certificate-image {
     transform: scale(1.03);
-    /* REDUCED FROM 1.05 */
     filter: brightness(1.08) contrast(1.05);
-    /* REDUCED ENHANCEMENT */
 }
 
 .certificate-item h3 {
-    font-size: 1.4rem;
-    /* REDUCED FROM 1.5rem */
+    font-size: 1.6rem;
     color: #667eea;
     margin-bottom: 12px;
-    /* REDUCED FROM 15px */
     font-weight: bold;
 }
 
 .certificate-item p {
     color: #ffffff;
     margin-bottom: 20px;
-    /* REDUCED FROM 25px */
-    font-size: 1rem;
-    /* REDUCED FROM 1.1rem */
+    font-size: 1.15rem;
+    font-weight: 500;
 }
 
 /* ENHANCED VIEW CERTIFICATE BUTTON */
@@ -737,10 +767,10 @@ p {
     background: linear-gradient(135deg, #2f375e, #393e6d 80%, #6c63ff 100%);
     color: #eaeaea;
     text-decoration: none;
-    padding: 12px 24px;
+    padding: 13px 26px;
     border-radius: 25px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
@@ -813,59 +843,6 @@ p {
     /* Balanced top and bottom padding */
 }
 
-#contact .container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    /* Keep content at the bottom */
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-}
-
-#contact h2 {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-    font-size: 3rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, #b39ddb, #7c43bd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-#contact h2::after {
-    content: '';
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    width: 100px;
-    height: 5px;
-    background: linear-gradient(45deg, #b39ddb, #7c43bd);
-    border-radius: 3px;
-    animation: expand-line 2s ease-in-out infinite alternate;
-}
-
-@keyframes expand-line {
-    from {
-        width: 80px;
-    }
-
-    to {
-        width: 120px;
-    }
-}
 
 /* Add top padding to container so content doesn't overlap the title */
 #contact .container {
@@ -874,7 +851,7 @@ p {
 
 #contact p {
     color: #a0a7d1;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     margin-bottom: 30px;
 }
 
@@ -891,7 +868,7 @@ p {
     text-decoration: none;
     padding: 18px 38px;
     /* Bigger buttons */
-    font-size: 1.18rem;
+    font-size: 1.25rem;
     /* Larger text */
     border: 3px solid #6c63ff;
     border-radius: 50px;
@@ -983,9 +960,10 @@ p {
         flex-wrap: nowrap;
     }
 
+    /* Navigation links */
     #top-nav .nav-link {
-        font-size: 1.05rem;
-        padding: 8px 18px;
+        font-size: 1.15rem;
+        padding: 9px 20px;
     }
 
     #top-nav .language-toggle.nav-lang {
@@ -1243,7 +1221,7 @@ body {
 }
 
 .skill-icon i {
-    font-size: 3rem;
+    font-size: 3.3rem;
 
     margin-bottom: 18px;
     transition: color 0.3s;
