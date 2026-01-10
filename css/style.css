@@ -189,9 +189,9 @@ p {
 /* Language Toggle */
 .language-toggle {
     position: fixed;
-    top: 20px;
+    top: 5px;
     right: 20px;
-    z-index: 10000;
+    z-index: 10002;
 }
 
 .lang-btn {
