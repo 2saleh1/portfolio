@@ -1,3 +1,18 @@
+(function () {
+    const viewport = document.querySelector('meta[name="viewport"]');
+    if (viewport) {
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
+    }
+
+    // Force reflow for LinkedIn in-app browser
+    if (window.innerWidth <= 768) {
+        document.documentElement.style.setProperty('max-width', '100vw');
+        document.body.style.setProperty('max-width', '100vw');
+        document.body.style.setProperty('overflow-x', 'hidden');
+    }
+})();
+
+
 // Smooth scrolling for anchor links
 document.addEventListener('DOMContentLoaded', function () {
     // Add smooth scrolling
