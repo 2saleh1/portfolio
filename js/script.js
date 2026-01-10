@@ -156,21 +156,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
 
-                // Add stagger animation to skill items AND FILL PROGRESS BARS
+                // Add stagger animation to skill items (REMOVED PROGRESS BAR FILLING)
                 if (entry.target.id === 'skills') {
                     const skillItems = entry.target.querySelectorAll('.skill-item');
                     skillItems.forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('skill-animate');
-
-                            // AUTOMATICALLY FILL PROGRESS BAR WHEN SCROLLED INTO VIEW
-                            const bar = item.querySelector('.skill-progress-bar');
-                            if (bar) {
-                                const level = bar.getAttribute('data-level');
-                                setTimeout(() => {
-                                    bar.style.width = level + '%';
-                                }, 200); // Small delay for smoother animation
-                            }
                         }, index * 100);
                     });
                 }
@@ -181,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     certificateItems.forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('certificate-animate');
-                        }, index * 10); // Staggered animation
+                        }, index * 10);
                     });
                 }
             }
@@ -193,21 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 
-    // INITIAL SKILL BARS CREATION
-    setTimeout(() => {
-        const skillItems = document.querySelectorAll('.skill-item');
-        const skillLevels = [70, 95, 95, 90, 100, 95, 100, 100, 80];
-
-        skillItems.forEach((item, index) => {
-            if (!item.querySelector('.skill-progress')) { // Only add if not already exists
-                const level = skillLevels[index] || 70;
-                const progressBar = document.createElement('div');
-                progressBar.className = 'skill-progress';
-                progressBar.innerHTML = `<div class="skill-progress-bar" data-level="${level}" style="width: 0%;"></div>`;
-                item.appendChild(progressBar);
-            }
-        });
-    }, 100); // Small delay to ensure DOM is ready
 
 
 
@@ -215,57 +191,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    // NEW FUNCTION TO RECREATE SKILL PROGRESS BARS
+    // NEW FUNCTION TO RECREATE SKILL 
     function recreateSkillBars() {
         const skillItems = document.querySelectorAll('.skill-item');
-        const skillLevels = [
-            70, // HTML & CSS (1st skill)
-            95, // JavaScript (2nd skill)
-            95, // React Native (3rd skill)
-            90, // Python (4th skill)
-            100, // Java (5th skill)
-            95, // TypeScript (6th skill)
-            100, // SQL (7th skill)
-            100, // Supabase (8th skill)
-            80  // AI & Deep Learning (9th skill)
-        ];
 
-        skillItems.forEach((item, index) => {
+        skillItems.forEach((item) => {
             // Remove existing progress bar if any
             const existingProgress = item.querySelector('.skill-progress');
             if (existingProgress) {
                 existingProgress.remove();
             }
 
-            const level = skillLevels[index] || 70; // Default to 70% if not specified
-
-            // Create new progress bar - START EMPTY
-            const progressBar = document.createElement('div');
-            progressBar.className = 'skill-progress';
-            progressBar.innerHTML = `<div class="skill-progress-bar" data-level="${level}" style="width: 0%;"></div>`;
-            item.appendChild(progressBar);
-
-            // DO NOT FILL IMMEDIATELY - Let the intersection observer handle it
-
-            // Add hover effects
+            // Add hover effects (keep these if you want)
             item.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px) scale(1.05) rotateY(5deg)';
-                const bar = this.querySelector('.skill-progress-bar');
-                if (bar) {
-                    bar.style.boxShadow = '0 0 20px rgba(102, 126, 234, 0.6)';
-                }
             });
 
             item.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
-                const bar = this.querySelector('.skill-progress-bar');
-                if (bar) {
-                    bar.style.boxShadow = 'none';
-                }
             });
         });
     }
-
     // Enhanced profile picture with 3D effect
     const profilePic = document.getElementById('profile-pic');
     if (profilePic) {
