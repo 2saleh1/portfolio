@@ -828,10 +828,10 @@ html[dir="rtl"] #top-nav ul {
 
 .modal-content {
     position: relative;
-    width: 95%;
-    height: 95%;
-    max-width: 1200px;
-    max-height: 90vh;
+    width: 98%;
+    height: 98%;
+    max-width: 1600px;
+    max-height: 95vh;
     background: var(--color-dark-blue);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
@@ -895,6 +895,7 @@ html[dir="rtl"] #top-nav ul {
     height: 100%;
     border-radius: var(--radius-sm);
     background: white;
+    object-fit: contain;
 }
 
 /* RTL Support for Modal */
@@ -1116,7 +1117,11 @@ html[dir="rtl"] .modal-close i {
     }
 
     .certificate-viewer {
-        padding: 60px 10px 10px;
+        padding: 55px 5px 5px;
+    }
+
+    .certificate-viewer iframe {
+        border-radius: 0;
     }
 
     html[dir="rtl"] .modal-close {
