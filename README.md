@@ -1,70 +1,63 @@
-# Hey there! 👋 Welcome to My Digital Space
+# Personal Portfolio Website
 
-So... you found my personal website repository! I'm Saleh, a Saudi programmer from Al-Qassim 🌴 - who loves turning ideas into code. This little corner of the internet is where I showcase who I am and what I'm passionate about.
+A modern, bilingual portfolio website showcasing my professional experience, skills, and achievements. Built with clean, responsive design principles and smooth user interactions.
 
-## 🚀 **[Visit My Live Website](https://2saleh1.github.io/portfolio/)** 🚀
+**Developer:** Saleh Al-Assaf | Saudi Arabia, Al-Qassim
 
-## What You'll Find Here 🌟
+## 🚀 **[View Live Website](https://2saleh1.github.io/portfolio/)** 🚀
 
-I built this website to be more than just another boring portfolio. It's got some cool stuff:
+## Features
 
-- **Bilingual Magic**
-- **Smooth Animations** 
-- **My Story**
-- **My Skills**
-- **My Certificates**
-- **Multiple Ways to Stalk Me**
+- **Bilingual Interface** - Seamless switching between English and Arabic with RTL support
+- **Responsive Design** - Optimized for all devices and screen sizes
+- **Interactive Animations** - Smooth transitions and engaging visual effects
+- **Certificate Viewer** - Modal-based certificate display with PDF preview
+- **Professional Sections** - About, Skills, Certificates, and Contact information
 
-## The Tech Stuff 🛠️
+## Technologies Used
 
-Built this with:
-- **HTML5** - The foundation
-- **CSS3** - Made it pretty with gradients and animations
-- **Vanilla JavaScript** - No frameworks needed, just pure JS magic
-- **A Saudi Flag Video** -  🇸🇦
+- **HTML5** - Semantic markup structure
+- **CSS3** - Modern styling with animations and gradients
+- **JavaScript (ES6)** - Interactive functionality and dynamic content
+- **Font Awesome** - Professional iconography
+- **GitHub Pages** - Hosting and deployment
 
+## Deployment
 
-## Want to Put This Online? 🚀
+### GitHub Pages Setup
+1. Fork or clone this repository
+2. Navigate to Settings → Pages
+3. Select the main branch as source
+4. Your site will be published at `https://[username].github.io/[repo-name]/`
 
-### The Easy Way (GitHub Pages)
-1. Fork this repo or create your own
-2. Go to Settings → Pages
-3. Select main branch
-4. Boom! Your site is live
+## Customization
 
+To adapt this template for your own use:
 
-## The Cool Interactive Stuff 🎨
+1. **index.html** - Update personal information and content
+2. **style.css** - Modify color schemes and styling
+3. **script.js** - Adjust interactive features and animations
+4. **Assets** - Replace images, videos, and certificate files
+5. **Translations** - Update Arabic and English text content
 
-### That Language Button
-- Floating button that follows you around 
-- Instant translation with smooth animations
-- Remembers your choice for next time
-- Proper Arabic reading direction support
+## Key Features
 
+### Language Toggle
+- Persistent language preference using localStorage
+- Smooth content transitions
+- Automatic direction (LTR/RTL) adjustment
 
-## Want to Make This Yours? 🔧
+### Certificate Modal
+- In-page PDF viewer
+- Scroll position preservation
+- Keyboard and click-to-close functionality
 
-Go ahead! Here's what to change:
+## Contact
 
-1. **index.html**: Replace my info with yours 
-2. **style.css**: Change colors to match your vibe
-3. **script.js**: Add your own cool features
-4. **Images/Videos**: Use your own face and background
-5. **Certificates**: Show off your own achievements
-
-
-
-## Let's Connect! 📞
-
-I'm pretty active on these platforms:
-- **Email**: saleh60361@gmail.com (I actually check this!)
-- **LinkedIn**: [Let's network professionally](https://www.linkedin.com/in/saleh-al-assaf-95470a349/)
-- **GitHub**: [2saleh1](https://github.com/2saleh1) (you're already here!)
-
+- **Email:** saleh60361@gmail.com
+- **LinkedIn:** [Saleh Al-Assaf](https://www.linkedin.com/in/saleh-al-assaf/)
+- **GitHub:** [2saleh1](https://github.com/2saleh1)
 
 ---
 
-
-
-
-Built with ❤️ by Saleh
+© 2026 Saleh Al-Assaf. All rights reserved.
