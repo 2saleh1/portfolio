@@ -350,6 +350,59 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 3000);
         }
     });
+
+    // Certificate Modal Functionality
+    const certificateModal = document.getElementById('certificate-modal');
+    const certificateFrame = document.getElementById('certificate-frame');
+    const modalClose = document.getElementById('modal-close');
+    const viewCertificateLinks = document.querySelectorAll('.view-certificate');
+    let scrollPosition = 0;
+
+    // Open modal when certificate link is clicked
+    viewCertificateLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const certificatePath = this.getAttribute('data-certificate');
+            if (certificatePath) {
+                // Save current scroll position
+                scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+                document.body.style.top = `-${scrollPosition}px`;
+
+                certificateFrame.src = certificatePath;
+                certificateModal.classList.add('active');
+                document.body.classList.add('modal-open');
+            }
+        });
+    });
+
+    // Close modal when close button is clicked
+    modalClose.addEventListener('click', function () {
+        certificateModal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+
+        // Restore scroll position
+        document.body.style.top = '';
+        window.scrollTo(0, scrollPosition);
+
+        // Clear iframe after animation
+        setTimeout(() => {
+            certificateFrame.src = '';
+        }, 300);
+    });
+
+    // Close modal when clicking outside the content
+    certificateModal.addEventListener('click', function (e) {
+        if (e.target === certificateModal) {
+            modalClose.click();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && certificateModal.classList.contains('active')) {
+            modalClose.click();
+        }
+    });
 });
 
 // Matrix rain effect
