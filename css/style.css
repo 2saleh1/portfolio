@@ -887,7 +887,8 @@ html[dir="rtl"] #top-nav ul {
     width: 100%;
     height: 100%;
     padding: 70px 20px 20px;
-    overflow: hidden;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .certificate-viewer iframe {
@@ -1118,10 +1119,13 @@ html[dir="rtl"] .modal-close i {
 
     .certificate-viewer {
         padding: 55px 5px 5px;
+        overflow: auto;
     }
 
     .certificate-viewer iframe {
         border-radius: 0;
+        min-height: 100%;
+        touch-action: pinch-zoom;
     }
 
     html[dir="rtl"] .modal-close {

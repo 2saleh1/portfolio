@@ -368,7 +368,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
                 document.body.style.top = `-${scrollPosition}px`;
 
-                certificateFrame.src = certificatePath;
+                // Add zoom parameter for mobile devices to fit PDF to width
+                const isMobile = window.innerWidth <= 768;
+                const pdfUrl = isMobile ? `${certificatePath}#view=FitH&zoom=page-fit` : certificatePath;
+
+                certificateFrame.src = pdfUrl;
                 certificateModal.classList.add('active');
                 document.body.classList.add('modal-open');
             }
