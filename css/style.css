@@ -3,8 +3,8 @@
    =================================== */
 :root {
     /* Colors  */
-    --color-primary: #6c63ff;
-    --color-secondary: #b39ddb;
+    --color-primary: #7dd3fc;
+    --color-secondary: #34d399;
     --color-accent: #38bdf8;
     --color-success: #10b981;
     --color-dark: #111111;
@@ -19,10 +19,10 @@
 
     /* Gradients  */
     --gradient-primary: linear-gradient(135deg, #232946 70%, #2d3250 100%);
-    --gradient-secondary: linear-gradient(90deg, #393e6d 60%, #6c63ff 100%);
+    --gradient-secondary: linear-gradient(90deg, #164e63 60%, #0f766e 100%);
     --gradient-nav: linear-gradient(90deg, #232946 60%, #393e6d 100%);
     --gradient-rainbow: linear-gradient(45deg, var(--color-secondary), var(--color-accent), var(--color-success));
-    --gradient-text: linear-gradient(90deg, var(--color-text), var(--color-primary), var(--color-dark-blue));
+    --gradient-text: linear-gradient(90deg, #e0f2fe, var(--color-primary), var(--color-secondary));
 
     /* Shadows */
     --shadow-sm: 0 2px 12px rgba(45, 19, 61, 0.18);
@@ -583,7 +583,7 @@ section .container {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
-    background: var(--gradient-secondary);
+    background: linear-gradient(90deg, #393e6d 60%, #6c63ff 100%);
     color: var(--color-light-alt);
     padding: 13px 26px;
     border-radius: var(--radius-lg);
@@ -595,7 +595,7 @@ section .container {
 
 .view-certificate:hover {
     transform: translateY(-2px) scale(1.03);
-    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 60%, var(--color-secondary) 100%);
+    background: linear-gradient(90deg, var(--color-accent) 0%, #6c63ff 60%, #b39ddb 100%);
     border-color: var(--color-accent);
 }
 
@@ -665,17 +665,17 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-    background: linear-gradient(45deg, #181818, #2d133d);
+    background: linear-gradient(45deg, #0a0a14, #111827);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #393e6d, #6c63ff, #a0a7d1);
+    background: linear-gradient(180deg, #7dd3fc, #34d399);
     border-radius: 7px;
-    border: 2px solid #181818;
+    border: 2px solid #0a0a14;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #b39ddb, #38bdf8, #10b981);
+    background: linear-gradient(180deg, #bae6fd, #6ee7b7);
 }
 
 /* ===================================
