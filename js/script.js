@@ -92,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function switchLanguage(lang) {
-        console.log('Switching to:', lang); // Debug log
-
         if (lang === 'ar') {
             // Switch to Arabic
             html.setAttribute('lang', 'ar');
@@ -153,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // FIXED LANGUAGE BUTTON EVENT LISTENER
     if (languageBtn) {
         languageBtn.addEventListener('click', function () {
-            console.log('Button clicked, current lang:', currentLang); // Debug log
             currentLang = currentLang === 'en' ? 'ar' : 'en';
             switchLanguage(currentLang);
             localStorage.setItem('preferred-language', currentLang);
@@ -412,21 +409,17 @@ document.addEventListener('DOMContentLoaded', function () {
 // Matrix rain effect
 let matrixActive = false;
 function toggleMatrixRain() {
-    console.log('Matrix toggle called, current state:', matrixActive); // Debug log
-
     if (matrixActive) {
         // Stop matrix effect
         document.querySelectorAll('.matrix-char').forEach(char => char.remove());
         document.body.classList.remove('matrix-active');
         matrixActive = false;
-        console.log('Matrix effect stopped');
         return;
     }
 
     // Start matrix effect
     matrixActive = true;
     document.body.classList.add('matrix-active');
-    console.log('Matrix effect started');
 
     const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
     const matrixInterval = setInterval(() => {

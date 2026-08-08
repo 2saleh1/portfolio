@@ -256,14 +256,6 @@ header {
     z-index: -1;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(102, 126, 234, 0.3));
-    z-index: 0;
-}
-
 header .container {
     position: relative;
     z-index: 1;
