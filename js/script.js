@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentLang = 'en';
 
-    // Load saved language preference
+    // Load saved language preference, then apply the active language to every translatable element.
     const savedLang = localStorage.getItem('preferred-language');
-    if (savedLang) {
+    if (savedLang === 'ar' || savedLang === 'en') {
         currentLang = savedLang;
-        switchLanguage(currentLang);
     }
+    switchLanguage(currentLang);
 
     // Function to update tagline phrases
     function updateTaglinePhrases(newPhrases) {
