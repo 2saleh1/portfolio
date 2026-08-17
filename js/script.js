@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageBtn = document.getElementById("language-btn");
     const langText = document.querySelector(".lang-text");
     const langFlag = document.querySelector(".lang-flag");
+    const bgVideo = document.getElementById("bg-video");
 
     const navLinks = document.querySelectorAll("#top-nav .nav-link");
     const sections = document.querySelectorAll("main section[id]");
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function applyLanguage(lang) {
         if (lang === "ar") {
             html.setAttribute("lang", "ar");
-            html.setAttribute("dir", "ltr");
+            html.setAttribute("dir", "rtl");
             document.body.classList.add("lang-ar");
             if (langText) langText.textContent = "English";
             if (langFlag) langFlag.textContent = "🇺🇸";
@@ -47,6 +48,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (currentLang !== "ar" && currentLang !== "en") {
         currentLang = "en";
+    }
+
+    if (bgVideo) {
+        bgVideo.muted = true;
+        bgVideo.defaultMuted = true;
+        bgVideo.setAttribute("muted", "");
+        bgVideo.setAttribute("playsinline", "");
+
+        const tryPlayVideo = function () {
+            const playPromise = bgVideo.play();
+            if (playPromise && typeof playPromise.catch === "function") {
+                playPromise.catch(() => {
+                    // Ignore autoplay rejection on restricted browsers.
+                });
+            }
+        };
+
+        bgVideo.addEventListener("loadeddata", tryPlayVideo, { once: true });
+        document.addEventListener("visibilitychange", function () {
+            if (!document.hidden) {
+                tryPlayVideo();
+            }
+        });
     }
 
     applyLanguage(currentLang);

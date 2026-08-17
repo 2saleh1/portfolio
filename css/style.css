@@ -760,10 +760,25 @@ body.modal-open {
     }
 
     #top-nav {
-        top: 3.5rem;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 40;
+        border-top: 1px solid var(--color-line);
+        background: rgba(255, 252, 247, 0.95);
+        backdrop-filter: blur(8px);
     }
 
     #top-nav ul {
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+        padding: 0.45rem 0.65rem;
+        gap: 0.4rem;
+        flex-wrap: nowrap;
         justify-content: flex-start;
         overflow-x: auto;
         scrollbar-width: none;
@@ -776,6 +791,19 @@ body.modal-open {
 
     .hero-grid {
         padding-top: 2.2rem;
+        padding-bottom: 6rem;
+    }
+
+    #bg-video {
+        object-fit: contain;
+        object-position: center center;
+        background: #111;
+        opacity: 0.72;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(180deg, rgba(246, 242, 234, 0.6) 0%, rgba(246, 242, 234, 0.35) 50%, rgba(246, 242, 234, 0.6) 100%);
     }
 
     .section-body {
@@ -807,6 +835,10 @@ body.modal-open {
         width: 100vw;
         height: 100svh;
         border-radius: 0;
+    }
+
+    body {
+        padding-bottom: 4.4rem;
     }
 }
 
@@ -843,6 +875,18 @@ body.lang-ar .hero-copy,
 body.lang-ar .section-body,
 body.lang-ar .split-head h2 {
     text-align: right;
+}
+
+body.lang-ar .top-bar {
+    flex-direction: row-reverse;
+}
+
+body.lang-ar .hero-grid {
+    direction: rtl;
+}
+
+body.lang-ar #top-nav ul {
+    direction: rtl;
 }
 
 body.lang-ar #top-nav .nav-link,
