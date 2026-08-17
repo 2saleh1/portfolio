@@ -20,384 +20,501 @@
     <meta name="twitter:image" content="https://2saleh1.github.io/portfolio/images/profile.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260808-2">
+    <link rel="stylesheet" href="css/style.css?v=20260818-2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        .skill-img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            margin-bottom: 18px;
-        }
-
-
-        /* Force mobile layout detection */
-        @media only screen and (max-width: 768px) {
-            body {
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- LANGUAGE TOGGLE -->
-    <div class="language-toggle nav-lang">
-        <button id="language-btn" class="lang-btn">
-            <span class="lang-text">العربية</span>
-            <span class="lang-flag">🇸🇦</span>
-        </button>
-    </div>
-    <!-- TOP NAVIGATION BAR -->
-    <nav id="top-nav">
-        <ul>
-            <li><a href="#about" data-en="About Me" data-ar="نبذة عني" class="nav-link">About Me</a></li>
-            <li><a href="#interests" data-en="My Interests" data-ar="اهتماماتي" class="nav-link">My Interests</a></li>
-            <li><a href="#skills" data-en="Skills" data-ar="المهارات" class="nav-link">Skills</a></li>
-            <li><a href="#certificates" data-en="Certificates" data-ar="الشهادات" class="nav-link">Certificates</a></li>
-            <li><a href="#contact" data-en="Get In Touch" data-ar="تواصل معي" class="nav-link">Get In Touch</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="site-shell">
+        <header id="top" class="hero-wrap">
+            <video autoplay muted loop playsinline id="bg-video" aria-hidden="true">
+                <source src="videos/saudi-flag.mp4" type="video/mp4">
+            </video>
 
-    <header>
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="videos/saudi-flag.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="container">
-            <img src="images/profile.jpg" alt="Profile" id="profile-pic">
-            <h1 data-en="Hi, I'm Saleh" data-ar="هلا والله، أنا صالح">Hi, I'm Saleh</h1>
-            <p class="tagline" data-en="Welcome to my portfolio" data-ar="نـــورت موقــعي">Welcome to my
-                portfolio</p>
-        </div>
-    </header>
+            <div class="hero-overlay"></div>
 
-    <main>
-        <section id="about">
-            <div class="container">
-                <h2 data-en="About Me" data-ar="نبذة عني">About Me</h2>
-                <p data-en="I'm a Saudi Full-Stack Developer from Al-Qassim with an academic background in Computer Science. I specialize in developing modern web and mobile applications using the latest frameworks and technologies. My interests extend to artificial intelligence and deep learning, and I continuously strive to expand my knowledge and apply it to practical solutions. I focus on writing clean, efficient code that solves problems and enhances user experience."
-                    data-ar="أنا مطور سعودي Full-Stack من القصيم بخلفية أكاديمية في علوم الحاسب. متخصص في تطوير تطبيقات الويب والتطبيقات المحمولة باستخدام أحدث الأطر والتقنيات. اهتماماتي تمتد إلى الذكاء الاصطناعي والتعلم العميق، وأسعى باستمرار لتطوير معرفتي وتوظيفها في حلول عملية. أركز على كتابة أكواد نظيفة وفعّالة تسهم في حل المشكلات وتحسين تجربة المستخدم.">
-                    I'm a Saudi Full-Stack Developer from Al-Qassim with an academic background in Computer Science. I
-                    specialize in developing modern web and mobile applications using the latest frameworks and
-                    technologies. My interests extend to artificial intelligence and deep learning, and I continuously
-                    strive to expand my knowledge and apply it to practical solutions. I focus on writing clean,
-                    efficient code that solves problems and enhances user experience.
-                </p>
-
-                <p data-en="This website brings together my work, skills, and interests. Feel free to explore and connect with me."
-                    data-ar="يجمع هذا الموقع أعمالي ومهاراتي واهتماماتي. تفضل بالاستكشاف والتواصل معي.">
-                    This website brings together my work, skills, and interests. Feel free to explore and connect with
-                    me.
-                </p>
-
-
-
-
+            <div class="top-bar">
+                <a class="brand-mark" href="#top" aria-label="Back to top">Saleh</a>
+                <button id="language-btn" class="lang-btn" type="button" aria-label="Toggle language">
+                    <span class="lang-text">العربية</span>
+                    <span class="lang-flag">🇸🇦</span>
+                </button>
             </div>
-        </section>
 
-        <section id="interests">
-            <div class="container">
-                <h2 data-en="My Interests" data-ar="اهتماماتي">My Interests</h2>
+            <nav id="top-nav" aria-label="Primary navigation">
                 <ul>
-                    <li data-en="Web Development" data-ar="تطوير الويب">Web Development</li>
-                    <li data-en="Mobile Development" data-ar="تطوير التطبيقات المحمولة">Mobile Development</li>
-                    <li data-en="Machine Learning" data-ar="تعلم الآلة">Machine Learning</li>
-                    <li data-en="Deep Learning" data-ar="التعلم العميق">Deep Learning</li>
-                    <li data-en="Football ⚽" data-ar="كرة القدم ⚽">Football ⚽</li>
+                    <li><a href="#cv" data-en="CV" data-ar="السيرة الذاتية" class="nav-link">CV</a></li>
+                    <li><a href="#about" data-en="About Me" data-ar="نبذة عني" class="nav-link">About Me</a></li>
+                    <li><a href="#education" data-en="Education" data-ar="التعليم" class="nav-link">Education</a></li>
+                    <li><a href="#experience" data-en="Experience" data-ar="الخبرة" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" data-en="Projects" data-ar="المشاريع" class="nav-link">Projects</a></li>
+                    <li><a href="#interests" data-en="My Interests" data-ar="اهتماماتي" class="nav-link">My
+                            Interests</a></li>
+                    <li><a href="#skills" data-en="Skills" data-ar="المهارات" class="nav-link">Skills</a></li>
+                    <li><a href="#certificates" data-en="Certificates" data-ar="الشهادات"
+                            class="nav-link">Certificates</a></li>
+                    <li><a href="#contact" data-en="Get In Touch" data-ar="تواصل معي" class="nav-link">Get In Touch</a>
+                    </li>
                 </ul>
-            </div>
-        </section>
+            </nav>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2 data-ar="مهاراتي" data-en="My Skills">My Skills</h2>
-                <p class="skills-intro" data-ar="التقنيات والأدوات التي أتقنها في مجال البرمجة وتطوير الويب"
-                    data-en="Technologies and tools I master in programming and web development">
-                    Technologies and tools I master in programming and web development
-                </p>
-                <div class="skills-container">
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-python"></i>
-                        </div>
-                        <h3>Python</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-js"></i>
-                        </div>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-react"></i>
-                        </div>
-                        <h3>React</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-node-js"></i>
-                        </div>
-                        <h3>Node.js</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-html5"></i>
-                        </div>
-                        <h3>HTML5</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-css3-alt"></i>
-                        </div>
-                        <h3>CSS3</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-java"></i>
-                        </div>
-                        <h3>Java</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-php"></i>
-                        </div>
-                        <h3>PHP</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fa-brands fa-git-alt"></i>
-                        </div>
-                        <h3>Git</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="images/ssql.png" alt="SQL" class="skill-img">
-                        </div>
-                        <h3>SQL</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="images/typescript.png" alt="TypeScript" class="skill-img">
-                        </div>
-                        <h3>TypeScript</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="images/supabase.png" alt="Supabase" class="skill-img">
-                        </div>
-                        <h3>Supabase</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="images/ai.png" alt="AI & Machine Learning" class="skill-img">
-                        </div>
-                        <h3>AI & Machine Learning</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="images/cpp.png" alt="C++" class="skill-img">
-                        </div>
-                        <h3>C++</h3>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="images/photoshop.png" alt="Photoshop" class="skill-img">
-                        </div>
-                        <h3>Photoshop</h3>
+            <div class="hero-grid container">
+                <figure class="profile-frame">
+                    <img src="images/profile.jpg" alt="Profile" id="profile-pic">
+                </figure>
+                <div class="hero-copy">
+                    <p class="eyebrow" data-en="Full-Stack Developer" data-ar="مطور متكامل Full-Stack">Full-Stack
+                        Developer</p>
+                    <h1 data-en="Hi, I'm Saleh" data-ar="هلا والله، أنا صالح">Hi, I'm Saleh</h1>
+                    <p class="tagline" data-en="Welcome to my portfolio" data-ar="نـــورت موقــعي">Welcome to my
+                        portfolio</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="cv" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="CV" data-ar="السيرة الذاتية">CV</h2>
+                    <div class="section-body">
+                        <article class="entry-card cv-card">
+                            <h3 data-en="Saleh Al-Assaf - Resume" data-ar="السيرة الذاتية - صالح العساف">Saleh Al-Assaf - Resume</h3>
+                            <p class="entry-meta" data-en="Preview or download the latest PDF version of my CV."
+                                data-ar="يمكنك معاينة أو تحميل أحدث نسخة PDF من سيرتي الذاتية.">
+                                Preview or download the latest PDF version of my CV.
+                            </p>
+                            <div class="cv-actions">
+                                <a href="#" data-certificate="cv/Saleh_alassaf_CV.pdf" class="view-certificate cv-btn">
+                                    <span data-en="Preview CV" data-ar="معاينة السيرة الذاتية">Preview CV</span>
+                                </a>
+                                <a href="cv/Saleh_alassaf_CV.pdf" class="cv-btn cv-download" download>
+                                    <span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
+                                </a>
+                            </div>
+                        </article>
                     </div>
                 </div>
-        </section>
+            </section>
 
-        <section id="certificates">
-            <div class="container">
-                <h2 data-en="Certificates" data-ar="الشهادات">Certificates</h2>
-                <p data-en="Here are some of my professional certifications:" data-ar="إليكم بعض شهاداتي المهنية:">Here
-                    are some of my professional certifications:</p>
-                <div class="certificates-grid">
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/1.jpg" alt="Certificate 1" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Safe Use of Social Media Platforms"
-                            data-ar="الاستخدام الآمن لوسائل التواصل الاجتماعي ">Safe Use of Social Media Platforms
-                        </h3>
-                        <p data-en="University of Hail" data-ar="جامعة حائل">University of Hail</p>
-                        <a href="#" data-certificate="certificates/1.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/2.jpg" alt="Certificate 2" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Fundamentals of Artificial Intelligence" data-ar="مبادئ الذكاء الاصطناعي">
-                            Fundamentals of Artificial Intelligence
-                        </h3>
-                        <p data-en="The Saudi Data and AI Authority (SDAIA)"
-                            data-ar="الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)">The Saudi Data and AI Authority
-                            (SDAIA)
+            <section id="about" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="About Me" data-ar="نبذة عني">About Me</h2>
+                    <div class="section-body prose">
+                        <p data-en="I'm a Saudi Full-Stack Developer from Al-Qassim with an academic background in Computer Science. I specialize in developing modern web and mobile applications using the latest frameworks and technologies. My interests extend to artificial intelligence and deep learning, and I continuously strive to expand my knowledge and apply it to practical solutions. I focus on writing clean, efficient code that solves problems and enhances user experience."
+                            data-ar="أنا مطور سعودي Full-Stack من القصيم بخلفية أكاديمية في علوم الحاسب. متخصص في تطوير تطبيقات الويب والتطبيقات المحمولة باستخدام أحدث الأطر والتقنيات. اهتماماتي تمتد إلى الذكاء الاصطناعي والتعلم العميق، وأسعى باستمرار لتطوير معرفتي وتوظيفها في حلول عملية. أركز على كتابة أكواد نظيفة وفعّالة تسهم في حل المشكلات وتحسين تجربة المستخدم.">
+                            I'm a Saudi Full-Stack Developer from Al-Qassim with an academic background in Computer
+                            Science. I
+                            specialize in developing modern web and mobile applications using the latest frameworks and
+                            technologies. My interests extend to artificial intelligence and deep learning, and I
+                            continuously
+                            strive to expand my knowledge and apply it to practical solutions. I focus on writing clean,
+                            efficient code that solves problems and enhances user experience.
                         </p>
-                        <a href="#" data-certificate="certificates/2.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/3.jpg" alt="Certificate 3" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Artificial Intelligence Concepts and Advanced Applications"
-                            data-ar="مفاهيم الذكاء الاصطناعي وتطبيقاته المتقدمة">
-                            Artificial Intelligence Concepts and Advanced Applications
-                        </h3>
-                        <p data-en="The Saudi Data and AI Authority (SDAIA)"
-                            data-ar="الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)">
-                            The Saudi Data and AI Authority (SDAIA)</p>
-                        <a href="#" data-certificate="certificates/3.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/4.png" alt="Certificate 4" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Oracle Certified Foundations Associate" data-ar="شهادة أساسيات أوراكل">Oracle
-                            Certified Foundations Associate</h3>
-                        <p data-en="Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate"
-                            data-ar="شهادة أوراكل للحوسبة السحابية 2025 - أساسيات الذكاء الاصطناعي">Oracle Cloud
-                            Infrastructure 2025 Certified AI Foundations Associate</p>
-                        <a href="#" data-certificate="certificates/4.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/5.jpg" alt="Certificate 5" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Full Stack Robotics Engineer" data-ar="مهندس روبوتات متكامل">
-                            Full Stack Robotics Engineer
-                        </h3>
-                        <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company</p>
-                        <a href="#" data-certificate="certificates/5.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
 
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/6.jpg" alt="Certificate 6" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Electronics Power Systems & IoT"
-                            data-ar="أنظمة الطاقة الإلكترونية وإنترنت الأشياء">
-                            Electronics Power Systems & IoT
-                        </h3>
-                        <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company</p>
-                        <a href="#" data-certificate="certificates/6.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
-
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/7.jpg" alt="Certificate 7" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Robotics and Artificial Intelligence" data-ar="الروبوتات والذكاء الاصطناعي">
-                            Robotics and Artificial Intelligence
-                        </h3>
-                        <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company</p>
-                        <a href="#" data-certificate="certificates/7.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
-
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/8.jpg" alt="Certificate 8" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Web Development & Natural Language Processing"
-                            data-ar="تطوير الويب ومعالجة اللغات الطبيعية">
-                            Web Development & Natural Language Processing
-                        </h3>
-                        <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company</p>
-                        <a href="#" data-certificate="certificates/8.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
-                    </div>
-
-                    <div class="certificate-item">
-                        <div class="certificate-frame">
-                            <img src="certificates/9.jpg" alt="Certificate 9" class="certificate-image" loading="lazy">
-                        </div>
-                        <h3 data-en="Mechanical Design" data-ar="التصميم الميكانيكي">
-                            Mechanical Design
-                        </h3>
-                        <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company</p>
-                        <a href="#" data-certificate="certificates/9.pdf" class="view-certificate">
-                            <span data-en=" View Certificate" data-ar=" عرض الشهادة"> View Certificate</span>
-                        </a>
+                        <p data-en="This website brings together my work, skills, and interests. Feel free to explore and connect with me."
+                            data-ar="يجمع هذا الموقع أعمالي ومهاراتي واهتماماتي. تفضل بالاستكشاف والتواصل معي.">
+                            This website brings together my work, skills, and interests. Feel free to explore and
+                            connect with me.
+                        </p>
                     </div>
                 </div>
-            </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="contact">
+            <section id="education" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="Education" data-ar="التعليم">Education</h2>
+                    <div class="section-body">
+                        <article class="entry-card">
+                            <h3 data-en="Bachelor of Computer Science, Qassim University"
+                                data-ar="بكالوريوس علوم الحاسب، جامعة القصيم">Bachelor of Computer Science, Qassim University</h3>
+                            <p class="entry-meta" data-en="Qassim, Saudi Arabia | GPA: 4.28 / 5.00"
+                                data-ar="القصيم، المملكة العربية السعودية | المعدل: 4.28 من 5.00">Qassim, Saudi Arabia | GPA: 4.28 / 5.00</p>
+                            <p class="entry-date" data-en="September 2021 - June 2026"
+                                data-ar="سبتمبر 2021 - يونيو 2026">September 2021 - June 2026</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="Experience" data-ar="الخبرة">Experience</h2>
+                    <div class="section-body">
+                        <article class="entry-card">
+                            <h3 data-en="Full Stack Robotics Engineer (Intern), Smart Methods"
+                                data-ar="متدرب مهندس روبوتات متكامل، شركة Smart Methods">Full Stack Robotics Engineer (Intern), Smart Methods</h3>
+                            <p class="entry-meta" data-en="Jeddah, Saudi Arabia"
+                                data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</p>
+                            <p class="entry-date" data-en="June 2025 - August 2025"
+                                data-ar="يونيو 2025 - أغسطس 2025">June 2025 - August 2025</p>
+                            <ul class="entry-points">
+                                <li data-en="Built an Arabic voice assistant in Python with Cohere LLM API, RealtimeSTT, and gTTS for end-to-end speech interaction."
+                                    data-ar="طوّرت مساعدًا صوتيًا عربيًا بلغة Python باستخدام Cohere LLM API وRealtimeSTT وgTTS لتجربة صوتية متكاملة.">Built an Arabic voice assistant in Python with Cohere LLM API, RealtimeSTT, and gTTS
+                                    for end-to-end speech interaction.</li>
+                                <li data-en="Developed practical AI applications including real-time face-recognition attendance and a sleep-detection ML model."
+                                    data-ar="طوّرت تطبيقات ذكاء اصطناعي عملية تشمل نظام حضور بالتعرف على الوجه ونموذج تعلم آلي لاكتشاف النعاس.">Developed practical AI applications including real-time face-recognition attendance
+                                    and a sleep-detection ML model.</li>
+                                <li data-en="Delivered full-stack and robotics solutions: responsive PHP/SQL web app with secure hardware controls and a 5DOF robotic arm using Arduino + 6 servo motors."
+                                    data-ar="قدّمت حلولًا متكاملة في الويب والروبوتات: تطبيق ويب متجاوب PHP/SQL مع تحكم آمن بالمكونات، وذراع روبوتية 5DOF باستخدام Arduino و6 محركات سيرفو.">Delivered full-stack and robotics solutions: responsive PHP/SQL web app with secure
+                                    hardware controls and a 5DOF robotic arm using Arduino + 6 servo motors.</li>
+                            </ul>
+                        </article>
+
+                        <article class="entry-card">
+                            <h3 data-en="Freelance System Developer &amp; Designer, Sama Oil"
+                                data-ar="مطور ومصمم أنظمة مستقل، Sama Oil">Freelance System Developer &amp; Designer, Sama Oil</h3>
+                            <p class="entry-meta" data-en="Qassim, Saudi Arabia"
+                                data-ar="القصيم، المملكة العربية السعودية">Qassim, Saudi Arabia</p>
+                            <p class="entry-date" data-en="August 2025 - November 2025"
+                                data-ar="أغسطس 2025 - نوفمبر 2025">August 2025 - November 2025</p>
+                            <ul class="entry-points">
+                                <li data-en="Designed and built a full-stack Periodic Inspection System to digitize station hygiene, cleaning workflows, and compliance tracking."
+                                    data-ar="صمّمت وطوّرت نظام تفتيش دوري متكامل لرقمنة متابعة النظافة وأعمال التنظيف والالتزام التشغيلي بالمحطات.">Designed and built a full-stack Periodic Inspection System to digitize station
+                                    hygiene, cleaning workflows, and compliance tracking.</li>
+                                <li data-en="Engineered custom logistics web modules with secure digital signatures for fuel station discharge operations."
+                                    data-ar="أنشأت وحدات ويب لوجستية مخصصة مع توقيع رقمي آمن لعمليات تفريغ الوقود في المحطات.">Engineered custom logistics web modules with secure digital signatures for fuel
+                                    station discharge operations.</li>
+                                <li data-en="Streamlined administration by building digital tools for maintenance requests, post-maintenance evaluations, and training records."
+                                    data-ar="حسّنت العمليات الإدارية عبر بناء أدوات رقمية لطلبات الصيانة وتقييمات ما بعد الصيانة وسجلات التدريب.">Streamlined administration by building digital tools for maintenance requests,
+                                    post-maintenance evaluations, and training records.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
+                    <div class="section-body">
+                        <article class="entry-card project-card">
+                            <p class="project-label" data-en="Graduation Project" data-ar="مشروع التخرج">Graduation Project</p>
+                            <h3 data-en="Fan Engagement &amp; Loyalty App"
+                                data-ar="تطبيق تفاعل المشجعين وبرنامج الولاء">Fan Engagement &amp; Loyalty App</h3>
+                            <figure class="project-media">
+                                <img src="images/1st_project.png" alt="Fan Engagement and Loyalty App Screenshot" loading="lazy">
+                            </figure>
+                            <p data-en="Built a full-stack cross-platform mobile app using React Native, Expo, and Supabase with real-time season-ticket booking and an interactive stadium seat map. Engineered a Dynamic Points Algorithm in PL/pgSQL for loyalty rewards based on attendance, punctuality, match outcomes, and opponent ranking. Implemented secure QR gate validation, real-time seat locking, and Row-Level Security for safe, scalable operations."
+                                data-ar="طوّرت تطبيقًا جوالًا متكاملًا متعدد المنصات باستخدام React Native وExpo وSupabase، مع حجز موسمي فوري وخريطة مقاعد تفاعلية للملعب. صمّمت خوارزمية نقاط ديناميكية بلغة PL/pgSQL لأتمتة مكافآت الولاء بناءً على الحضور والالتزام بالوقت ونتائج المباريات وترتيب الخصم. كما نفّذت تحققًا آمنًا عبر QR عند البوابات مع قفل المقاعد لحظيًا وRow-Level Security لتشغيل آمن وقابل للتوسع.">
+                                Built a full-stack cross-platform mobile app using React Native, Expo, and Supabase with
+                                real-time season-ticket booking and an interactive stadium seat map.
+                                Engineered a Dynamic Points Algorithm in PL/pgSQL for loyalty rewards based on
+                                attendance, punctuality, match outcomes, and opponent ranking.
+                                Implemented secure QR gate validation, real-time seat locking, and Row-Level Security
+                                for safe, scalable operations.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interests" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="My Interests" data-ar="اهتماماتي">My Interests</h2>
+                    <ul class="interest-list">
+                        <li data-en="Web Development" data-ar="تطوير الويب">Web Development</li>
+                        <li data-en="Mobile Development" data-ar="تطوير التطبيقات المحمولة">Mobile Development</li>
+                        <li data-en="Machine Learning" data-ar="تعلم الآلة">Machine Learning</li>
+                        <li data-en="Deep Learning" data-ar="التعلم العميق">Deep Learning</li>
+                        <li data-en="Football ⚽" data-ar="كرة القدم ⚽">Football ⚽</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills" class="content-section reveal-section skills">
+                <div class="container split-head">
+                    <h2 data-ar="مهاراتي" data-en="My Skills">My Skills</h2>
+                    <div class="section-body">
+                        <p class="skills-intro" data-ar="التقنيات والأدوات التي أتقنها في مجال البرمجة وتطوير الويب"
+                            data-en="Technologies and tools I master in programming and web development">
+                            Technologies and tools I master in programming and web development
+                        </p>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-python"></i>
+                                </div>
+                                <h3>Python</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-js"></i>
+                                </div>
+                                <h3>JavaScript</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-react"></i>
+                                </div>
+                                <h3>React</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-node-js"></i>
+                                </div>
+                                <h3>Node.js</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-html5"></i>
+                                </div>
+                                <h3>HTML5</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                </div>
+                                <h3>CSS3</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-java"></i>
+                                </div>
+                                <h3>Java</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-php"></i>
+                                </div>
+                                <h3>PHP</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-git-alt"></i>
+                                </div>
+                                <h3>Git</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/ssql.png" alt="SQL" class="skill-img">
+                                </div>
+                                <h3>SQL</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/typescript.png" alt="TypeScript" class="skill-img">
+                                </div>
+                                <h3>TypeScript</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/supabase.png" alt="Supabase" class="skill-img">
+                                </div>
+                                <h3>Supabase</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/ai.png" alt="AI & Machine Learning" class="skill-img">
+                                </div>
+                                <h3>AI &amp; Machine Learning</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/cpp.png" alt="C++" class="skill-img">
+                                </div>
+                                <h3>C++</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/photoshop.png" alt="Photoshop" class="skill-img">
+                                </div>
+                                <h3>Photoshop</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certificates" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="Certificates" data-ar="الشهادات">Certificates</h2>
+                    <div class="section-body">
+                        <p data-en="Here are some of my professional certifications:"
+                            data-ar="إليكم بعض شهاداتي المهنية:">
+                            Here are some of my professional certifications:
+                        </p>
+                        <div class="certificates-grid">
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/1.jpg" alt="Certificate 1" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Safe Use of Social Media Platforms"
+                                    data-ar="الاستخدام الآمن لوسائل التواصل الاجتماعي ">Safe Use of Social Media
+                                    Platforms</h3>
+                                <p data-en="University of Hail" data-ar="جامعة حائل">University of Hail</p>
+                                <a href="#" data-certificate="certificates/1.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/2.jpg" alt="Certificate 2" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Fundamentals of Artificial Intelligence" data-ar="مبادئ الذكاء الاصطناعي">
+                                    Fundamentals of Artificial Intelligence</h3>
+                                <p data-en="The Saudi Data and AI Authority (SDAIA)"
+                                    data-ar="الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)">The Saudi Data and AI
+                                    Authority (SDAIA)</p>
+                                <a href="#" data-certificate="certificates/2.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/3.jpg" alt="Certificate 3" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Artificial Intelligence Concepts and Advanced Applications"
+                                    data-ar="مفاهيم الذكاء الاصطناعي وتطبيقاته المتقدمة">Artificial Intelligence
+                                    Concepts and Advanced Applications</h3>
+                                <p data-en="The Saudi Data and AI Authority (SDAIA)"
+                                    data-ar="الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)">The Saudi Data and AI
+                                    Authority (SDAIA)</p>
+                                <a href="#" data-certificate="certificates/3.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/4.png" alt="Certificate 4" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Oracle Certified Foundations Associate" data-ar="شهادة أساسيات أوراكل">
+                                    Oracle Certified Foundations Associate</h3>
+                                <p data-en="Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate"
+                                    data-ar="شهادة أوراكل للحوسبة السحابية 2025 - أساسيات الذكاء الاصطناعي">Oracle Cloud
+                                    Infrastructure 2025 Certified AI Foundations Associate</p>
+                                <a href="#" data-certificate="certificates/4.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/5.jpg" alt="Certificate 5" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Full Stack Robotics Engineer" data-ar="مهندس روبوتات متكامل">Full Stack
+                                    Robotics Engineer</h3>
+                                <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
+                                </p>
+                                <a href="#" data-certificate="certificates/5.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/6.jpg" alt="Certificate 6" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Electronics Power Systems & IoT"
+                                    data-ar="أنظمة الطاقة الإلكترونية وإنترنت الأشياء">Electronics Power Systems & IoT
+                                </h3>
+                                <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
+                                </p>
+                                <a href="#" data-certificate="certificates/6.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/7.jpg" alt="Certificate 7" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Robotics and Artificial Intelligence"
+                                    data-ar="الروبوتات والذكاء الاصطناعي">Robotics and Artificial Intelligence</h3>
+                                <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
+                                </p>
+                                <a href="#" data-certificate="certificates/7.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/8.jpg" alt="Certificate 8" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Web Development & Natural Language Processing"
+                                    data-ar="تطوير الويب ومعالجة اللغات الطبيعية">Web Development & Natural Language
+                                    Processing</h3>
+                                <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
+                                </p>
+                                <a href="#" data-certificate="certificates/8.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item">
+                                <div class="certificate-frame">
+                                    <img src="certificates/9.jpg" alt="Certificate 9" class="certificate-image"
+                                        loading="lazy">
+                                </div>
+                                <h3 data-en="Mechanical Design" data-ar="التصميم الميكانيكي">Mechanical Design</h3>
+                                <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
+                                </p>
+                                <a href="#" data-certificate="certificates/9.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="content-section reveal-section">
+                <div class="container split-head">
+                    <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+                    <div class="section-body">
+                        <p data-en="I'd love to connect with you! Feel free to reach out through any of these platforms:"
+                            data-ar="يسعدني التواصل معك! لا تتردد في التواصل عبر أي من هذه المنصات:">
+                            I'd love to connect with you! Feel free to reach out through any of these platforms:
+                        </p>
+                        <div class="contact-links">
+                            <a href="mailto:saleh60361@gmail.com">
+                                <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                                <span data-en="Email" data-ar="البريد الإلكتروني">Email</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/saleh-al-assaf/" target="_blank"
+                                rel="noopener noreferrer">
+                                <span class="contact-icon"><i class="fa-brands fa-linkedin"></i></span>
+                                <span data-en="LinkedIn" data-ar="لينكد إن">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/2saleh1" target="_blank" rel="noopener noreferrer">
+                                <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+                                <span data-en="GitHub" data-ar="قيت هب">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
             <div class="container">
-                <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
-                <p data-en="I'd love to connect with you! Feel free to reach out through any of these platforms:"
-                    data-ar="يسعدني التواصل معك! لا تتردد في التواصل عبر أي من هذه المنصات:">
-                    I'd love to connect with you! Feel free to reach out through any of these platforms:
+                <p data-en="© 2026 Saleh. This portfolio was designed and developed by me. Source code is available on GitHub."
+                    data-ar="© 2026 صالح. تم تصميم وتطوير هذا المعرض الشخصي من قبلي. الكود المصدري متاح على GitHub.">
+                    © 2026 Saleh. This portfolio was designed and developed by me. Source code is available on GitHub.
                 </p>
-                <div class="contact-links">
-                    <a href="mailto:saleh60361@gmail.com">
-                        <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
-                        <span data-en="Email" data-ar="البريد الإلكتروني">Email</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/saleh-al-assaf/" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-icon"><i class="fa-brands fa-linkedin"></i></span>
-                        <span data-en="LinkedIn" data-ar="لينكد إن">LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/2saleh1" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
-                        <span data-en="GitHub" data-ar="قيت هب">GitHub</span>
-                    </a>
-                </div>
             </div>
-        </section>
-    </main>
+        </footer>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p data-en="© 2026 Saleh. This portfolio was designed and developed by me. Source code is available on GitHub."
-                data-ar="© 2026 صالح. تم تصميم وتطوير هذا المعرض الشخصي من قبلي. الكود المصدري متاح على GitHub.">
-                © 2026 Saleh. This portfolio was designed and developed by me. Source code is available on
-                GitHub.
-            </p>
-        </div>
-    </footer>
-
-
-    <!-- Certificate Modal -->
-    <div id="certificate-modal" class="certificate-modal">
+    <div id="certificate-modal" class="certificate-modal" aria-hidden="true">
         <div class="modal-content">
             <button class="modal-close" id="modal-close" aria-label="Close">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span data-en="Back" data-ar="رجوع">Back</span>
             </button>
             <div class="certificate-viewer">
-                <iframe id="certificate-frame" src="" frameborder="0" allowfullscreen></iframe>
+                <iframe id="certificate-frame" src="" title="Certificate preview" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
-    <script src="js/script.js?v=20260808-2"></script>
+    <script src="js/script.js?v=20260818-2"></script>
 </body>
 
 </html>
