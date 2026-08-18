@@ -101,7 +101,7 @@ ul {
     object-fit: cover;
     object-position: center 38%;
     filter: saturate(0.95) contrast(0.96);
-    opacity: 0.58;
+    opacity: 1;
     z-index: -3;
 }
 
@@ -213,7 +213,6 @@ ul {
 
 .profile-frame {
     width: 100%;
-    aspect-ratio: 1 / 1.2;
     border: 1px solid var(--color-line);
     border-radius: var(--radius-lg);
     background: var(--color-paper-elevated);
@@ -222,11 +221,17 @@ ul {
     transform: rotate(-2deg);
 }
 
+.profile-frame-inner {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    overflow: hidden;
+    border-radius: calc(var(--radius-lg) - 8px);
+}
+
 #profile-pic {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: calc(var(--radius-lg) - 8px);
     transition: transform var(--duration-mid) var(--ease-standard);
 }
 
@@ -239,13 +244,28 @@ ul {
 }
 
 .eyebrow {
+    position: relative;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    font-size: 0.8rem;
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     font-weight: 700;
-    color: var(--color-accent);
+    color: var(--color-ink);
     margin-bottom: var(--space-4);
+    z-index: 1;
+}
+
+.eyebrow::before {
+    content: "";
+    position: absolute;
+    left: -0.35em;
+    right: -0.35em;
+    top: 18%;
+    bottom: 8%;
+    background: var(--color-accent-soft);
+    transform: skew(-4deg);
+    border-radius: 4px;
+    z-index: -1;
 }
 
 h1,
@@ -268,7 +288,7 @@ h1 {
 .tagline {
     margin-top: var(--space-4);
     max-width: 34ch;
-    font-size: clamp(1.02rem, 1.8vw, 1.25rem);
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
     color: var(--color-ink-soft);
 }
 
