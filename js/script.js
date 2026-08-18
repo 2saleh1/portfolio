@@ -160,8 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!certificatePath || !modal || !certificateFrame) return;
 
             scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            const isMobile = window.innerWidth <= 768;
-            const pdfUrl = isMobile ? `${certificatePath}#view=FitH&zoom=page-fit` : certificatePath;
+            const pdfUrl = `${certificatePath}#view=FitH&zoom=page-fit`;
 
             certificateFrame.src = pdfUrl;
             modal.classList.add("active");

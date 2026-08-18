@@ -99,6 +99,7 @@ ul {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 38%;
     filter: saturate(0.95) contrast(0.96);
     opacity: 0.58;
     z-index: -3;
@@ -676,8 +677,8 @@ footer p {
 }
 
 .modal-content {
-    width: min(1180px, 96vw);
-    height: min(92svh, 850px);
+    width: min(1380px, 98vw);
+    height: min(96svh, 980px);
     border-radius: 18px;
     border: 1px solid var(--color-line);
     background: var(--color-paper-elevated);
@@ -712,12 +713,13 @@ footer p {
 .certificate-viewer {
     width: 100%;
     height: 100%;
-    padding: 3.8rem 0.85rem 0.85rem;
+    padding: 3.8rem 0.6rem 0.6rem;
 }
 
 .certificate-viewer iframe {
     width: 100%;
     height: 100%;
+    min-height: 0;
     border: 0;
     border-radius: 10px;
     background: #fff;
@@ -795,10 +797,9 @@ body.modal-open {
     }
 
     #bg-video {
-        object-fit: contain;
-        object-position: center center;
-        background: #111;
-        opacity: 0.72;
+        object-fit: cover;
+        object-position: 56% 36%;
+        opacity: 0.68;
     }
 
     .hero-overlay {
@@ -835,6 +836,10 @@ body.modal-open {
         width: 100vw;
         height: 100svh;
         border-radius: 0;
+    }
+
+    .certificate-viewer {
+        padding: 3.5rem 0.45rem 0.45rem;
     }
 
     body {
