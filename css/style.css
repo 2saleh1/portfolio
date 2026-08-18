@@ -269,6 +269,8 @@ ul {
     box-decoration-break: clone
 }
 
+
+
 h1,
 h2,
 h3 {
@@ -943,4 +945,8 @@ body.lang-ar .modal-close {
 
 body.lang-ar .modal-close i {
     transform: scaleX(-1);
+}
+
+body.lang-ar .eyebrow {
+    letter-spacing: normal;
 }
