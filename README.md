@@ -60,4 +60,4 @@ To adapt this template for your own use:
 
 ---
 
-© 2026 Saleh Al-Assaf. All rights reserved.
+© 2026 Saleh Al Assaf. 
