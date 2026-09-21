@@ -23,14 +23,27 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260818-2">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/style.css?v=20260921-4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem("portfolio-theme");
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body>
     <div class="site-shell">
         <header id="top" class="hero-wrap">
-            <video autoplay muted loop playsinline webkit-playsinline id="bg-video" aria-hidden="true">
+            <video autoplay muted loop playsinline webkit-playsinline id="bg-video" aria-hidden="true" preload="auto"
+                disablePictureInPicture disableremoteplayback>
                 <source src="videos/saudi-flag.mp4" type="video/mp4">
             </video>
 
@@ -38,10 +51,15 @@
 
             <div class="top-bar">
                 <a class="brand-mark" href="#top" aria-label="Back to top">Saleh</a>
-                <button id="language-btn" class="lang-btn" type="button" aria-label="Toggle language">
-                    <span class="lang-text">العربية</span>
-                    <span class="lang-flag">🇸🇦</span>
-                </button>
+                <div class="top-bar-controls">
+                    <button id="theme-btn" class="theme-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button id="language-btn" class="lang-btn" type="button" aria-label="Toggle language">
+                        <span class="lang-text">العربية</span>
+                        <span class="lang-flag">🇸🇦</span>
+                    </button>
+                </div>
             </div>
 
             <nav id="top-nav" aria-label="Primary navigation">
@@ -203,7 +221,12 @@
                 <div class="container split-head">
                     <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
                     <div class="section-body">
-                        <article class="entry-card project-card">
+                        <div class="filter-bar" data-filter-group="projects">
+                            <button class="filter-btn active" type="button" data-filter="all" data-en="All" data-ar="الكل">All</button>
+                            <button class="filter-btn" type="button" data-filter="mobile" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</button>
+                            <button class="filter-btn" type="button" data-filter="ai" data-en="AI &amp; Vision" data-ar="الذكاء الاصطناعي">AI &amp; Vision</button>
+                        </div>
+                        <article class="entry-card project-card" data-category="mobile">
                             <p class="project-label" data-en="Graduation Project" data-ar="مشروع التخرج">Graduation
                                 Project</p>
                             <h3 data-en="Fan Engagement &amp; Loyalty App"
@@ -223,7 +246,7 @@
                             </p>
                         </article>
 
-                        <article class="entry-card project-card">
+                        <article class="entry-card project-card" data-category="ai mobile">
                             <p class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal
                                 Project</p>
                             <h3 data-en="Clothing Owner Identification App" data-ar="تطبيق التعرف على مالك القطعة">
@@ -243,7 +266,7 @@
                             </p>
                         </article>
 
-                        <article class="entry-card project-card">
+                        <article class="entry-card project-card" data-category="ai">
                             <p class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal
                                 Project</p>
                             <h3 data-en="Face-Based Attendance System" data-ar="نظام تسجيل الحضور بالتعرف على الوجه">
@@ -262,7 +285,7 @@
                             </p>
                         </article>
 
-                        <article class="entry-card project-card">
+                        <article class="entry-card project-card" data-category="ai">
                             <p class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal
                                 Project</p>
                             <h3 data-en="AI Sleep Detection System" data-ar="نظام كشف النوم بالذكاء الاصطناعي">AI Sleep
@@ -394,6 +417,60 @@
                                 </div>
                                 <h3>Photoshop</h3>
                             </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-brands fa-react fa-react-native"></i>
+                                </div>
+                                <h3>React Native</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/nextjs.svg" alt="Next.js" class="skill-img">
+                                </div>
+                                <h3>Next.js</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/postgresql.svg?v=2" alt="PostgreSQL" class="skill-img">
+                                </div>
+                                <h3>PostgreSQL</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/django.svg?v=2" alt="Django" class="skill-img">
+                                </div>
+                                <h3>Django</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/tensorflow.svg" alt="TensorFlow" class="skill-img">
+                                </div>
+                                <h3>TensorFlow</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-solid fa-eye fa-cv-icon"></i>
+                                </div>
+                                <h3>Computer Vision</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-solid fa-chart-column fa-data-icon"></i>
+                                </div>
+                                <h3>Data Analysis</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fa-solid fa-arrows-rotate fa-cicd-icon"></i>
+                                </div>
+                                <h3>CI/CD</h3>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="images/arduino.svg" alt="Arduino &amp; Robotics" class="skill-img">
+                                </div>
+                                <h3>Arduino &amp; Robotics</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -407,8 +484,14 @@
                             data-ar="إليكم بعض شهاداتي المهنية:">
                             Here are some of my professional certifications:
                         </p>
+                        <div class="filter-bar" data-filter-group="certificates">
+                            <button class="filter-btn active" type="button" data-filter="all" data-en="All" data-ar="الكل">All</button>
+                            <button class="filter-btn" type="button" data-filter="ai" data-en="AI &amp; Cloud" data-ar="الذكاء الاصطناعي والسحابي">AI &amp; Cloud</button>
+                            <button class="filter-btn" type="button" data-filter="robotics" data-en="Robotics &amp; IoT" data-ar="الروبوتات والأنظمة">Robotics &amp; IoT</button>
+                            <button class="filter-btn" type="button" data-filter="general" data-en="General" data-ar="عام">General</button>
+                        </div>
                         <div class="certificates-grid">
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="general">
                                 <div class="certificate-frame">
                                     <img src="certificates/1.jpg" alt="Certificate 1" class="certificate-image"
                                         loading="lazy">
@@ -421,7 +504,7 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="ai">
                                 <div class="certificate-frame">
                                     <img src="certificates/2.jpg" alt="Certificate 2" class="certificate-image"
                                         loading="lazy">
@@ -435,7 +518,7 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="ai">
                                 <div class="certificate-frame">
                                     <img src="certificates/3.jpg" alt="Certificate 3" class="certificate-image"
                                         loading="lazy">
@@ -450,7 +533,7 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="ai">
                                 <div class="certificate-frame">
                                     <img src="certificates/4.png" alt="Certificate 4" class="certificate-image"
                                         loading="lazy">
@@ -464,7 +547,7 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="robotics">
                                 <div class="certificate-frame">
                                     <img src="certificates/5.jpg" alt="Certificate 5" class="certificate-image"
                                         loading="lazy">
@@ -477,13 +560,13 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="robotics">
                                 <div class="certificate-frame">
                                     <img src="certificates/6.jpg" alt="Certificate 6" class="certificate-image"
                                         loading="lazy">
                                 </div>
-                                <h3 data-en="Electronics Power Systems & IoT"
-                                    data-ar="أنظمة الطاقة الإلكترونية وإنترنت الأشياء">Electronics Power Systems & IoT
+                                <h3 data-en="Electronics Power Systems &amp; IoT"
+                                    data-ar="أنظمة الطاقة الإلكترونية وإنترنت الأشياء">Electronics Power Systems &amp; IoT
                                 </h3>
                                 <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
                                 </p>
@@ -491,7 +574,7 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="robotics ai">
                                 <div class="certificate-frame">
                                     <img src="certificates/7.jpg" alt="Certificate 7" class="certificate-image"
                                         loading="lazy">
@@ -504,13 +587,13 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="ai">
                                 <div class="certificate-frame">
                                     <img src="certificates/8.jpg" alt="Certificate 8" class="certificate-image"
                                         loading="lazy">
                                 </div>
-                                <h3 data-en="Web Development & Natural Language Processing"
-                                    data-ar="تطوير الويب ومعالجة اللغات الطبيعية">Web Development & Natural Language
+                                <h3 data-en="Web Development &amp; Natural Language Processing"
+                                    data-ar="تطوير الويب ومعالجة اللغات الطبيعية">Web Development &amp; Natural Language
                                     Processing</h3>
                                 <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
                                 </p>
@@ -518,7 +601,7 @@
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
-                            <article class="certificate-item">
+                            <article class="certificate-item" data-category="robotics">
                                 <div class="certificate-frame">
                                     <img src="certificates/9.jpg" alt="Certificate 9" class="certificate-image"
                                         loading="lazy">
@@ -527,6 +610,31 @@
                                 <p data-en="Smart Methods Company" data-ar="شركة الأساليب الذكية">Smart Methods Company
                                 </p>
                                 <a href="#" data-certificate="certificates/9.pdf" class="view-certificate">
+                                    <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                                </a>
+                            </article>
+                            <article class="certificate-item" data-category="ai">
+                                <div class="certificate-frame">
+                                    <img src="certificates/10.png" alt="Building with the Claude API"
+                                        class="certificate-image" loading="lazy">
+                                </div>
+                                <h3 data-en="Building with the Claude API" data-ar="بناء التطبيقات باستخدام Claude API">
+                                    Building with the Claude API</h3>
+                                <p data-en="Claude Academy (Anthropic)" data-ar="أكاديمية كلود (Anthropic)">Claude
+                                    Academy (Anthropic)</p>
+                                <div class="cert-verify-code">
+                                    <div class="cert-verify-content">
+                                        <span class="cert-code-label" data-en="Verification:"
+                                            data-ar="التحقق:">Verification:</span>
+                                        <code>8b515844c3f12b4ec2fb285cecce2cbd</code>
+                                    </div>
+                                    <button class="contact-copy-btn cert-copy-btn" type="button"
+                                        data-copy="8b515844c3f12b4ec2fb285cecce2cbd"
+                                        aria-label="Copy verification code" title="Copy verification code">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                                <a href="#" data-certificate="certificates/10.pdf" class="view-certificate">
                                     <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
                                 </a>
                             </article>
@@ -544,18 +652,87 @@
                             I'd love to connect with you! Feel free to reach out through any of these platforms:
                         </p>
                         <div class="contact-links">
-                            <a href="mailto:AlassafSaleh@hotmail.com">
-                                <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
-                                <span data-en="Email" data-ar="البريد الإلكتروني">Email</span>
+                            <a href="mailto:AlassafSaleh@hotmail.com" class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="contact-card-info">
+                                    <span class="contact-card-label" data-en="Email"
+                                        data-ar="البريد الإلكتروني">Email</span>
+                                    <span class="contact-card-value">AlassafSaleh@hotmail.com</span>
+                                </div>
+                                <div class="contact-card-actions">
+                                    <button class="contact-copy-btn" type="button" data-copy="AlassafSaleh@hotmail.com"
+                                        aria-label="Copy email" title="Copy">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                    <span class="contact-card-action">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </span>
+                                </div>
                             </a>
+
+                            <a href="https://wa.me/966550866036" target="_blank" rel="noopener noreferrer"
+                                class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+                                </div>
+                                <div class="contact-card-info">
+                                    <span class="contact-card-label" data-en="Phone"
+                                        data-ar="رقم الهاتف">Phone</span>
+                                    <span class="contact-card-value dir-ltr">+966 55 086 6036</span>
+                                </div>
+                                <div class="contact-card-actions">
+                                    <button class="contact-copy-btn" type="button" data-copy="+966 55 086 6036"
+                                        aria-label="Copy phone number" title="Copy">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                    <span class="contact-card-action">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </span>
+                                </div>
+                            </a>
+
                             <a href="https://www.linkedin.com/in/saleh-al-assaf/" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="contact-icon"><i class="fa-brands fa-linkedin"></i></span>
-                                <span data-en="LinkedIn" data-ar="لينكد إن">LinkedIn</span>
+                                rel="noopener noreferrer" class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </div>
+                                <div class="contact-card-info">
+                                    <span class="contact-card-label" data-en="LinkedIn"
+                                        data-ar="لينكد إن">LinkedIn</span>
+                                    <span class="contact-card-value">saleh-al-assaf</span>
+                                </div>
+                                <div class="contact-card-actions">
+                                    <button class="contact-copy-btn" type="button"
+                                        data-copy="https://www.linkedin.com/in/saleh-al-assaf/"
+                                        aria-label="Copy LinkedIn link" title="Copy">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                    <span class="contact-card-action">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </span>
+                                </div>
                             </a>
-                            <a href="https://github.com/2saleh1" target="_blank" rel="noopener noreferrer">
-                                <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
-                                <span data-en="GitHub" data-ar="قيت هب">GitHub</span>
+
+                            <a href="https://github.com/2saleh1" target="_blank" rel="noopener noreferrer"
+                                class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+                                <div class="contact-card-info">
+                                    <span class="contact-card-label" data-en="GitHub" data-ar="قيت هب">GitHub</span>
+                                    <span class="contact-card-value">2saleh1</span>
+                                </div>
+                                <div class="contact-card-actions">
+                                    <button class="contact-copy-btn" type="button" data-copy="https://github.com/2saleh1"
+                                        aria-label="Copy GitHub link" title="Copy">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                    <span class="contact-card-action">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -585,7 +762,16 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=20260818-2"></script>
+    <button id="back-to-top" class="back-to-top-btn" type="button" aria-label="Back to top" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="toast-msg" class="toast-msg" role="status" aria-live="polite" aria-hidden="true">
+        <i class="fa-solid fa-check"></i>
+        <span class="toast-text"></span>
+    </div>
+
+    <script src="js/script.js?v=20260921-4"></script>
 </body>
 
 </html>
