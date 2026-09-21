@@ -80,6 +80,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Lock mobile hero height to prevent background video from expanding when scrolling down
+    let lastClientWidth = window.innerWidth;
+    function lockHeroHeight() {
+        if (window.innerWidth <= 768) {
+            const currentHeight = window.innerHeight;
+            document.documentElement.style.setProperty("--hero-height", currentHeight + "px");
+        } else {
+            document.documentElement.style.removeProperty("--hero-height");
+        }
+    }
+
+    lockHeroHeight();
+
+    window.addEventListener("resize", function () {
+        // ONLY update if horizontal width changed (e.g. rotation / orientation change)
+        // This explicitly prevents expanding when mobile address bars collapse during vertical scroll!
+        if (window.innerWidth !== lastClientWidth) {
+            lastClientWidth = window.innerWidth;
+            lockHeroHeight();
+        }
+    });
+
+    window.addEventListener("orientationchange", function () {
+        setTimeout(lockHeroHeight, 200);
+    });
+
     const themeBtn = document.getElementById("theme-btn");
     let currentTheme = localStorage.getItem("portfolio-theme") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
