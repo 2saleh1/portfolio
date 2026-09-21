@@ -315,8 +315,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    let isScrollTicking = false;
+    function onThrottledScroll() {
+        if (!isScrollTicking) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                isScrollTicking = false;
+            });
+            isScrollTicking = true;
+        }
+    }
+
     handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", onThrottledScroll, { passive: true });
 
     if (backToTopBtn) {
         backToTopBtn.addEventListener("click", function () {

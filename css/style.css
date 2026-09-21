@@ -1201,11 +1201,15 @@ body.modal-open {
         margin: 0;
         z-index: 1000;
         border-top: 1px solid var(--color-line);
-        background: var(--color-nav);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-        padding-bottom: env(safe-area-inset-bottom, 0px);
+        background: var(--color-paper-elevated);
+        box-shadow: 0 -4px 22px rgba(0, 0, 0, 0.09);
+        padding-bottom: max(0.35rem, env(safe-area-inset-bottom, 0px));
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: transform;
+        contain: layout paint;
     }
 
     #top-nav .nav-desktop-only {
