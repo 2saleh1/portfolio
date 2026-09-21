@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const themeBtn = document.getElementById("theme-btn");
-    let currentTheme = localStorage.getItem("portfolio-theme") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    let currentTheme = localStorage.getItem("portfolio-theme") || "light";
 
     function applyTheme(theme) {
         if (theme === "dark") {
@@ -132,15 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
             currentTheme = currentTheme === "dark" ? "light" : "dark";
             applyTheme(currentTheme);
             localStorage.setItem("portfolio-theme", currentTheme);
-        });
-    }
-
-    if (window.matchMedia) {
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-            if (!localStorage.getItem("portfolio-theme")) {
-                currentTheme = e.matches ? "dark" : "light";
-                applyTheme(currentTheme);
-            }
         });
     }
 

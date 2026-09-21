@@ -24,7 +24,7 @@
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/style.css?v=20260921-8">
+    <link rel="stylesheet" href="css/style.css?v=20260921-9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script>
         (function () {
@@ -33,9 +33,10 @@
                     document.documentElement.style.setProperty('--hero-height', window.innerHeight + 'px');
                 }
                 var savedTheme = localStorage.getItem("portfolio-theme");
-                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-                if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                if (savedTheme === "dark") {
                     document.documentElement.setAttribute("data-theme", "dark");
+                } else {
+                    document.documentElement.removeAttribute("data-theme");
                 }
             } catch (e) {}
         })();
@@ -771,7 +772,7 @@
         <span class="toast-text"></span>
     </div>
 
-    <script src="js/script.js?v=20260921-8"></script>
+    <script src="js/script.js?v=20260921-9"></script>
 </body>
 
 </html>
