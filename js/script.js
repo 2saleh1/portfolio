@@ -254,6 +254,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!target) return;
 
             event.preventDefault();
+            this.blur();
+            navLinks.forEach((l) => l.classList.remove("active"));
+            this.classList.add("active");
             target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
     });
@@ -278,17 +281,30 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateActiveLink() {
         let currentSectionId = "";
 
+        const viewAnchor = Math.min(window.innerHeight * 0.38, 260);
         sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= 140 && rect.bottom >= 140) {
+            if (rect.top <= viewAnchor && rect.bottom >= 80) {
                 currentSectionId = section.id;
             }
         });
 
+        // On mobile, map sub-sections to their primary flagship tab
+        let targetId = currentSectionId;
+        if (window.innerWidth <= 768) {
+            if (["cv", "about", "education", "experience"].includes(currentSectionId)) {
+                targetId = "cv";
+            } else if (["interests", "skills"].includes(currentSectionId)) {
+                targetId = "skills";
+            }
+        }
+
+        let hasActive = false;
         navLinks.forEach((link) => {
             const href = link.getAttribute("href");
-            if (href === `#${currentSectionId}`) {
+            if (targetId && href === `#${targetId}` && !hasActive) {
                 link.classList.add("active");
+                hasActive = true;
             } else {
                 link.classList.remove("active");
             }

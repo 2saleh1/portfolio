@@ -45,14 +45,37 @@
     --color-ink-soft: #b8aba0;
     --color-paper: #161412;
     --color-paper-elevated: #1f1b18;
-    --color-section-bg: rgba(31, 27, 24, 0.78);
-    --color-line: #352f29;
+    --color-section-bg: #1c1815;
+    --color-line: rgba(255, 255, 255, 0.08);
     --color-accent: #d97855;
     --color-accent-soft: #542d1f;
-    --color-nav: rgba(22, 20, 18, 0.92);
+    --color-nav: #1f1b18;
 
-    --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.45);
-    --shadow-strong: 0 24px 56px rgba(0, 0, 0, 0.7);
+    --shadow-soft: none;
+    --shadow-strong: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .section-body {
+    background: var(--color-section-bg);
+    border: 1px solid var(--color-line);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+[data-theme="dark"] .entry-card,
+[data-theme="dark"] .skill-item,
+[data-theme="dark"] .certificate-item,
+[data-theme="dark"] .contact-card {
+    background: #231e1a;
+    border: 1px solid var(--color-line);
+    box-shadow: none;
+}
+
+[data-theme="dark"] .contact-card:hover,
+[data-theme="dark"] .skill-item:hover,
+[data-theme="dark"] .certificate-item:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 [data-theme="dark"] body {
@@ -309,15 +332,21 @@ ul {
     font-size: 0.94rem;
     font-weight: 650;
     color: var(--color-ink-soft);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
     transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
 }
 
-#top-nav .nav-link:hover,
-#top-nav .nav-link:focus-visible,
 #top-nav .nav-link.active {
     color: var(--color-ink);
     background: rgba(177, 92, 63, 0.18);
-    outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #top-nav .nav-link:hover {
+        color: var(--color-ink);
+        background: rgba(177, 92, 63, 0.18);
+    }
 }
 
 .hero-grid {
@@ -1254,6 +1283,19 @@ body.modal-open {
         overflow: hidden;
         text-overflow: ellipsis;
         box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+    }
+
+    #top-nav .nav-link:focus,
+    #top-nav .nav-link:focus-visible {
+        outline: none;
+        background: transparent;
+    }
+
+    #top-nav .nav-link.active {
+        color: var(--color-ink);
+        background: rgba(177, 92, 63, 0.18) !important;
     }
 
     .hero-wrap {
