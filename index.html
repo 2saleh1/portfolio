@@ -24,7 +24,7 @@
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/style.css?v=20260921-10">
+    <link rel="stylesheet" href="css/style.css?v=20260929-6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script>
         (function () {
@@ -54,7 +54,6 @@
             <div class="hero-overlay"></div>
 
             <div class="top-bar">
-                <a class="brand-mark" href="#top" aria-label="Back to top">Saleh</a>
                 <div class="top-bar-controls">
                     <button id="theme-btn" class="theme-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
                         <i class="fa-solid fa-moon"></i>
@@ -98,21 +97,34 @@
 
         <main>
             <section id="cv" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="CV" data-ar="السيرة الذاتية">CV</h2>
-                    <div class="section-body">
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Curriculum Vitae" data-ar="السيرة الذاتية">Curriculum Vitae</span>
+                            <h2 data-en="CV" data-ar="السيرة الذاتية">CV</h2>
+                        </div>
+                    </div>
+                    <div class="section-body cv-section-body">
                         <article class="entry-card cv-card">
-                            <h3 data-en="Saleh Al-Assaf - Resume" data-ar="السيرة الذاتية - صالح العساف">Saleh Al-Assaf
-                                - Resume</h3>
-                            <p class="entry-meta" data-en="Preview or download the latest PDF version of my CV."
-                                data-ar="يمكنك معاينة أو تحميل أحدث نسخة PDF من سيرتي الذاتية.">
-                                Preview or download the latest PDF version of my CV.
-                            </p>
+                            <div class="cv-card-main">
+                                <div class="cv-badge-icon">
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                </div>
+                                <div class="cv-text-wrap">
+                                    <h3 data-en="Saleh Al-Assaf — Full-Stack Developer Resume" data-ar="صالح العساف — السيرة الذاتية لمطور متكامل">Saleh Al-Assaf — Full-Stack Developer Resume</h3>
+                                    <p class="entry-meta" data-en="Preview online or download the latest PDF version of my curriculum vitae."
+                                        data-ar="يمكنك معاينة السيرة الذاتية مباشرة أو تحميل أحدث نسخة PDF منها.">
+                                        Preview online or download the latest PDF version of my curriculum vitae.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="cv-actions">
-                                <a href="#" data-certificate="cv/Saleh_alassaf_CV.pdf" class="view-certificate cv-btn">
+                                <a href="#" data-certificate="cv/Saleh_alassaf_CV.pdf" data-preview-img="cv/Saleh_alassaf_CV.webp" data-title-en="Saleh Al-Assaf — CV" data-title-ar="صالح العساف — السيرة الذاتية" class="view-certificate cv-btn">
+                                    <i class="fa-solid fa-eye"></i>
                                     <span data-en="Preview CV" data-ar="معاينة السيرة الذاتية">Preview CV</span>
                                 </a>
                                 <a href="cv/Saleh_alassaf_CV.pdf" class="cv-btn cv-download" download>
+                                    <i class="fa-solid fa-download"></i>
                                     <span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
                                 </a>
                             </div>
@@ -122,9 +134,14 @@
             </section>
 
             <section id="about" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="About Me" data-ar="نبذة عني">About Me</h2>
-                    <div class="section-body prose">
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Background &amp; Profile" data-ar="نبذة تعريفية">Background &amp; Profile</span>
+                            <h2 data-en="About Me" data-ar="نبذة عني">About Me</h2>
+                        </div>
+                    </div>
+                    <div class="section-body prose about-prose">
                         <p data-en="I'm a Saudi Full-Stack Developer from Al-Qassim with an academic background in Computer Science. I specialize in developing modern web and mobile applications using the latest frameworks and technologies. My interests extend to artificial intelligence and deep learning, and I continuously strive to expand my knowledge and apply it to practical solutions. I focus on writing clean, efficient code that solves problems and enhances user experience."
                             data-ar="أنا مطور سعودي Full-Stack من القصيم بخلفية أكاديمية في علوم الحاسب. متخصص في تطوير تطبيقات الويب والتطبيقات المحمولة باستخدام أحدث الأطر والتقنيات. اهتماماتي تمتد إلى الذكاء الاصطناعي والتعلم العميق، وأسعى باستمرار لتطوير معرفتي وتوظيفها في حلول عملية. أركز على كتابة أكواد نظيفة وفعّالة تسهم في حل المشكلات وتحسين تجربة المستخدم.">
                             I'm a Saudi Full-Stack Developer from Al-Qassim with an academic background in Computer
@@ -146,182 +163,374 @@
             </section>
 
             <section id="education" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="Education" data-ar="التعليم">Education</h2>
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Academic Journey" data-ar="المسار الأكاديمي">Academic Journey</span>
+                            <h2 data-en="Education" data-ar="التعليم">Education</h2>
+                        </div>
+                    </div>
                     <div class="section-body">
-                        <article class="entry-card">
-                            <h3 data-en="Bachelor of Computer Science, Qassim University"
-                                data-ar="بكالوريوس علوم الحاسب، جامعة القصيم">Bachelor of Computer Science, Qassim
-                                University</h3>
-                            <p class="entry-meta" data-en="Qassim, Saudi Arabia | GPA: 4.28 / 5.00"
-                                data-ar="القصيم، المملكة العربية السعودية | المعدل: 4.28 من 5.00">Qassim, Saudi Arabia |
-                                GPA: 4.28 / 5.00</p>
-                            <p class="entry-date" data-en="September 2021 - June 2026"
-                                data-ar="سبتمبر 2021 - يونيو 2026">September 2021 - June 2026</p>
+                        <article class="entry-card education-card">
+                            <div class="card-headline-row">
+                                <div class="card-title-group">
+                                    <div class="card-icon-pill">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <h3 data-en="Bachelor of Computer Science, Qassim University"
+                                            data-ar="بكالوريوس علوم الحاسب، جامعة القصيم">Bachelor of Computer Science, Qassim
+                                            University</h3>
+                                        <p class="entry-meta" data-en="Qassim, Saudi Arabia"
+                                            data-ar="القصيم، المملكة العربية السعودية">Qassim, Saudi Arabia</p>
+                                    </div>
+                                </div>
+                                <div class="card-badges-group">
+                                    <span class="highlight-badge" data-en="GPA: 4.28 / 5.00"
+                                        data-ar="المعدل: 4.28 من 5.00">GPA: 4.28 / 5.00</span>
+                                    <span class="date-badge" data-en="September 2021 - June 2026"
+                                        data-ar="سبتمبر 2021 - يونيو 2026">September 2021 - June 2026</span>
+                                </div>
+                            </div>
                         </article>
                     </div>
                 </div>
             </section>
 
             <section id="experience" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="Experience" data-ar="الخبرة">Experience</h2>
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Career History" data-ar="المسيرة المهنية">Career History</span>
+                            <h2 data-en="Experience" data-ar="الخبرة">Experience</h2>
+                        </div>
+                    </div>
                     <div class="section-body">
-                        <article class="entry-card">
-                            <h3 data-en="Full Stack Robotics Engineer (Intern), Smart Methods"
-                                data-ar="متدرب مهندس روبوتات متكامل، شركة Smart Methods">Full Stack Robotics Engineer
-                                (Intern), Smart Methods</h3>
-                            <p class="entry-meta" data-en="Jeddah, Saudi Arabia"
-                                data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</p>
-                            <p class="entry-date" data-en="June 2025 - August 2025" data-ar="يونيو 2025 - أغسطس 2025">
-                                June 2025 - August 2025</p>
-                            <ul class="entry-points">
-                                <li data-en="Built an Arabic voice assistant in Python with Cohere LLM API, RealtimeSTT, and gTTS for end-to-end speech interaction."
-                                    data-ar="طوّرت مساعدًا صوتيًا عربيًا بلغة Python باستخدام Cohere LLM API وRealtimeSTT وgTTS لتجربة صوتية متكاملة.">
-                                    Built an Arabic voice assistant in Python with Cohere LLM API, RealtimeSTT, and gTTS
-                                    for end-to-end speech interaction.</li>
-                                <li data-en="Developed practical AI applications including real-time face-recognition attendance and a sleep-detection ML model."
-                                    data-ar="طوّرت تطبيقات ذكاء اصطناعي عملية تشمل نظام حضور بالتعرف على الوجه ونموذج تعلم آلي لاكتشاف النعاس.">
-                                    Developed practical AI applications including real-time face-recognition attendance
-                                    and a sleep-detection ML model.</li>
-                                <li data-en="Delivered full-stack and robotics solutions: responsive PHP/SQL web app with secure hardware controls and a 5DOF robotic arm using Arduino + 6 servo motors."
-                                    data-ar="قدّمت حلولًا متكاملة في الويب والروبوتات: تطبيق ويب متجاوب PHP/SQL مع تحكم آمن بالمكونات، وذراع روبوتية 5DOF باستخدام Arduino و6 محركات سيرفو.">
-                                    Delivered full-stack and robotics solutions: responsive PHP/SQL web app with secure
-                                    hardware controls and a 5DOF robotic arm using Arduino + 6 servo motors.</li>
-                            </ul>
-                        </article>
+                        <div class="experience-stack">
+                            <article class="entry-card experience-card">
+                                <div class="card-headline-row">
+                                    <div class="card-title-group">
+                                        <div class="card-icon-pill">
+                                            <i class="fa-solid fa-robot"></i>
+                                        </div>
+                                        <div>
+                                            <h3 data-en="Full Stack Robotics Engineer (Intern), Smart Methods"
+                                                data-ar="متدرب مهندس روبوتات متكامل، شركة Smart Methods">Full Stack Robotics Engineer
+                                                (Intern), Smart Methods</h3>
+                                            <p class="entry-meta" data-en="Jeddah, Saudi Arabia"
+                                                data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</p>
+                                        </div>
+                                    </div>
+                                    <span class="date-badge" data-en="June 2025 - August 2025" data-ar="يونيو 2025 - أغسطس 2025">
+                                        June 2025 - August 2025</span>
+                                </div>
+                                <ul class="entry-points">
+                                    <li data-en="Built an Arabic voice assistant in Python with Cohere LLM API, RealtimeSTT, and gTTS for end-to-end speech interaction."
+                                        data-ar="طوّرت مساعدًا صوتيًا عربيًا بلغة Python باستخدام Cohere LLM API وRealtimeSTT وgTTS لتجربة صوتية متكاملة.">
+                                        Built an Arabic voice assistant in Python with Cohere LLM API, RealtimeSTT, and gTTS
+                                        for end-to-end speech interaction.</li>
+                                    <li data-en="Developed practical AI applications including real-time face-recognition attendance and a sleep-detection ML model."
+                                        data-ar="طوّرت تطبيقات ذكاء اصطناعي عملية تشمل نظام حضور بالتعرف على الوجه ونموذج تعلم آلي لاكتشاف النعاس.">
+                                        Developed practical AI applications including real-time face-recognition attendance
+                                        and a sleep-detection ML model.</li>
+                                    <li data-en="Delivered full-stack and robotics solutions: responsive PHP/SQL web app with secure hardware controls and a 5DOF robotic arm using Arduino + 6 servo motors."
+                                        data-ar="قدّمت حلولًا متكاملة في الويب والروبوتات: تطبيق ويب متجاوب PHP/SQL مع تحكم آمن بالمكونات، وذراع روبوتية 5DOF باستخدام Arduino و6 محركات سيرفو.">
+                                        Delivered full-stack and robotics solutions: responsive PHP/SQL web app with secure
+                                        hardware controls and a 5DOF robotic arm using Arduino + 6 servo motors.</li>
+                                </ul>
+                            </article>
 
-                        <article class="entry-card">
-                            <h3 data-en="Freelance System Developer &amp; Designer, Sama Oil"
-                                data-ar="مطور ومصمم أنظمة مستقل، Sama Oil">Freelance System Developer &amp; Designer,
-                                Sama Oil</h3>
-                            <p class="entry-meta" data-en="Qassim, Saudi Arabia"
-                                data-ar="القصيم، المملكة العربية السعودية">Qassim, Saudi Arabia</p>
-                            <p class="entry-date" data-en="August 2025 - November 2025"
-                                data-ar="أغسطس 2025 - نوفمبر 2025">August 2025 - November 2025</p>
-                            <ul class="entry-points">
-                                <li data-en="Designed and built a full-stack Periodic Inspection System to digitize station hygiene, cleaning workflows, and compliance tracking."
-                                    data-ar="صمّمت وطوّرت نظام تفتيش دوري متكامل لرقمنة متابعة النظافة وأعمال التنظيف والالتزام التشغيلي بالمحطات.">
-                                    Designed and built a full-stack Periodic Inspection System to digitize station
-                                    hygiene, cleaning workflows, and compliance tracking.</li>
-                                <li data-en="Engineered custom logistics web modules with secure digital signatures for fuel station discharge operations."
-                                    data-ar="أنشأت وحدات ويب لوجستية مخصصة مع توقيع رقمي آمن لعمليات تفريغ الوقود في المحطات.">
-                                    Engineered custom logistics web modules with secure digital signatures for fuel
-                                    station discharge operations.</li>
-                                <li data-en="Streamlined administration by building digital tools for maintenance requests, post-maintenance evaluations, and training records."
-                                    data-ar="حسّنت العمليات الإدارية عبر بناء أدوات رقمية لطلبات الصيانة وتقييمات ما بعد الصيانة وسجلات التدريب.">
-                                    Streamlined administration by building digital tools for maintenance requests,
-                                    post-maintenance evaluations, and training records.</li>
-                            </ul>
-                        </article>
+                            <article class="entry-card experience-card">
+                                <div class="card-headline-row">
+                                    <div class="card-title-group">
+                                        <div class="card-icon-pill">
+                                            <i class="fa-solid fa-gas-pump"></i>
+                                        </div>
+                                        <div>
+                                            <h3 data-en="Freelance System Developer &amp; Designer, Sama Oil"
+                                                data-ar="مطور ومصمم أنظمة مستقل، Sama Oil">Freelance System Developer &amp; Designer,
+                                                Sama Oil</h3>
+                                            <p class="entry-meta" data-en="Qassim, Saudi Arabia"
+                                                data-ar="القصيم، المملكة العربية السعودية">Qassim, Saudi Arabia</p>
+                                        </div>
+                                    </div>
+                                    <span class="date-badge" data-en="August 2025 - November 2025"
+                                        data-ar="أغسطس 2025 - نوفمبر 2025">August 2025 - November 2025</span>
+                                </div>
+                                <ul class="entry-points">
+                                    <li data-en="Designed and built a full-stack Periodic Inspection System to digitize station hygiene, cleaning workflows, and compliance tracking."
+                                        data-ar="صمّمت وطوّرت نظام تفتيش دوري متكامل لرقمنة متابعة النظافة وأعمال التنظيف والالتزام التشغيلي بالمحطات.">
+                                        Designed and built a full-stack Periodic Inspection System to digitize station
+                                        hygiene, cleaning workflows, and compliance tracking.</li>
+                                    <li data-en="Engineered custom logistics web modules with secure digital signatures for fuel station discharge operations."
+                                        data-ar="أنشأت وحدات ويب لوجستية مخصصة مع توقيع رقمي آمن لعمليات تفريغ الوقود في المحطات.">
+                                        Engineered custom logistics web modules with secure digital signatures for fuel
+                                        station discharge operations.</li>
+                                    <li data-en="Streamlined administration by building digital tools for maintenance requests, post-maintenance evaluations, and training records."
+                                        data-ar="حسّنت العمليات الإدارية عبر بناء أدوات رقمية لطلبات الصيانة وتقييمات ما بعد الصيانة وسجلات التدريب.">
+                                        Streamlined administration by building digital tools for maintenance requests,
+                                        post-maintenance evaluations, and training records.</li>
+                                </ul>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section id="projects" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
-                    <div class="section-body">
+            <section id="projects" class="content-section reveal-section projects-section-wide">
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Featured Work" data-ar="أبرز الأعمال">Featured Work</span>
+                            <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
+                        </div>
                         <div class="filter-bar" data-filter-group="projects">
                             <button class="filter-btn active" type="button" data-filter="all" data-en="All" data-ar="الكل">All</button>
                             <button class="filter-btn" type="button" data-filter="mobile" data-en="Mobile Apps" data-ar="تطبيقات الجوال">Mobile Apps</button>
                             <button class="filter-btn" type="button" data-filter="ai" data-en="AI &amp; Vision" data-ar="الذكاء الاصطناعي">AI &amp; Vision</button>
                         </div>
+                    </div>
+
+                    <div class="projects-grid">
                         <article class="entry-card project-card" data-category="mobile">
-                            <p class="project-label" data-en="Graduation Project" data-ar="مشروع التخرج">Graduation
-                                Project</p>
-                            <h3 data-en="Fan Engagement &amp; Loyalty App"
-                                data-ar="تطبيق تفاعل المشجعين وبرنامج الولاء">Fan Engagement &amp; Loyalty App</h3>
-                            <figure class="project-media">
-                                <img src="images/1st_project.png" alt="Fan Engagement and Loyalty App Screenshot"
-                                    loading="lazy">
-                            </figure>
-                            <p data-en="Built a full-stack cross-platform mobile app using React Native, Expo, and Supabase with real-time season-ticket booking and an interactive stadium seat map. Engineered a Dynamic Points Algorithm in PL/pgSQL for loyalty rewards based on attendance, punctuality, match outcomes, and opponent ranking. Implemented secure QR gate validation, real-time seat locking, and Row-Level Security for safe, scalable operations."
-                                data-ar="طوّرت تطبيقًا جوالًا متكاملًا متعدد المنصات باستخدام React Native وExpo وSupabase، مع حجز موسمي فوري وخريطة مقاعد تفاعلية للملعب. صمّمت خوارزمية نقاط ديناميكية بلغة PL/pgSQL لأتمتة مكافآت الولاء بناءً على الحضور والالتزام بالوقت ونتائج المباريات وترتيب الخصم. كما نفّذت تحققًا آمنًا عبر QR عند البوابات مع قفل المقاعد لحظيًا وRow-Level Security لتشغيل آمن وقابل للتوسع.">
-                                Built a full-stack cross-platform mobile app using React Native, Expo, and Supabase with
-                                real-time season-ticket booking and an interactive stadium seat map.
-                                Engineered a Dynamic Points Algorithm in PL/pgSQL for loyalty rewards based on
-                                attendance, punctuality, match outcomes, and opponent ranking.
-                                Implemented secure QR gate validation, real-time seat locking, and Row-Level Security
-                                for safe, scalable operations.
-                            </p>
+                            <div class="project-media-wrap">
+                                <figure class="project-media view-project-media"
+                                    data-image="images/1st_project.png"
+                                    data-title-en="Fan Engagement &amp; Loyalty App"
+                                    data-title-ar="تطبيق تفاعل المشجعين وبرنامج الولاء"
+                                    role="button"
+                                    tabindex="0"
+                                    aria-label="Click to enlarge screenshot">
+                                    <div class="project-media-inner">
+                                        <img src="images/1st_project.png" alt="Fan Engagement and Loyalty App Screenshot" loading="lazy">
+                                    </div>
+                                    <div class="project-media-overlay">
+                                        <span class="project-zoom-badge">
+                                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                            <span data-en="Click to enlarge" data-ar="اضغط للتكبير">Click to enlarge</span>
+                                        </span>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-label" data-en="Graduation Project" data-ar="مشروع التخرج">Graduation Project</span>
+                                </div>
+                                <h3 data-en="Fan Engagement &amp; Loyalty App" data-ar="تطبيق تفاعل المشجعين وبرنامج الولاء">Fan Engagement &amp; Loyalty App</h3>
+                                <p data-en="Built a full-stack cross-platform mobile app using React Native, Expo, and Supabase with real-time season-ticket booking and an interactive stadium seat map. Engineered a Dynamic Points Algorithm in PL/pgSQL for loyalty rewards based on attendance, punctuality, match outcomes, and opponent ranking. Implemented secure QR gate validation, real-time seat locking, and Row-Level Security for safe, scalable operations."
+                                    data-ar="طوّرت تطبيقًا جوالًا متكاملًا متعدد المنصات باستخدام React Native وExpo وSupabase، مع حجز موسمي فوري وخريطة مقاعد تفاعلية للملعب. صمّمت خوارزمية نقاط ديناميكية بلغة PL/pgSQL لأتمتة مكافآت الولاء بناءً على الحضور والالتزام بالوقت ونتائج المباريات وترتيب الخصم. كما نفّذت تحققًا آمنًا عبر QR عند البوابات مع قفل المقاعد لحظيًا وRow-Level Security لتشغيل آمن وقابل للتوسع.">
+                                    Built a full-stack cross-platform mobile app using React Native, Expo, and Supabase with
+                                    real-time season-ticket booking and an interactive stadium seat map.
+                                    Engineered a Dynamic Points Algorithm in PL/pgSQL for loyalty rewards based on
+                                    attendance, punctuality, match outcomes, and opponent ranking.
+                                    Implemented secure QR gate validation, real-time seat locking, and Row-Level Security
+                                    for safe, scalable operations.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag">React Native</span>
+                                    <span class="project-tag">Expo</span>
+                                    <span class="project-tag">Supabase</span>
+                                    <span class="project-tag">PL/pgSQL</span>
+                                </div>
+                                <div class="project-actions">
+                                    <button class="project-preview-btn view-project-media" type="button"
+                                        data-image="images/1st_project.png"
+                                        data-title-en="Fan Engagement &amp; Loyalty App"
+                                        data-title-ar="تطبيق تفاعل المشجعين وبرنامج الولاء"
+                                        aria-label="Enlarge image preview">
+                                        <i class="fa-solid fa-expand"></i>
+                                        <span data-en="Preview Screenshot" data-ar="معاينة الصورة">Preview Screenshot</span>
+                                    </button>
+                                </div>
+                            </div>
                         </article>
 
                         <article class="entry-card project-card" data-category="ai mobile">
-                            <p class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal
-                                Project</p>
-                            <h3 data-en="Clothing Owner Identification App" data-ar="تطبيق التعرف على مالك القطعة">
-                                Clothing Owner Identification App</h3>
-                            <figure class="project-media">
-                                <img src="images/2nd_project.png" alt="Clothing Owner Identification App Screenshot"
-                                    loading="lazy">
-                            </figure>
-                            <p data-en="Built a web app to solve a common household problem: clothes getting mixed up between family members. Each garment is photographed and tagged with its owner, and TensorFlow.js extracts a visual embedding that is stored in a Supabase Postgres database using the pgvector extension. When a piece goes missing or gets swapped, a new photo is matched against the stored embeddings through vector similarity search, instantly identifying the rightful owner."
-                                data-ar="طوّرت تطبيق ويب يحل مشكلة شائعة داخل البيت: اختلاط الملابس بين أفراد العائلة. تُصوَّر كل قطعة وتُربط باسم صاحبها، حيث يستخرج TensorFlow.js بصمة بصرية (embedding) لها وتُخزَّن في قاعدة بيانات Supabase (PostgreSQL) عبر إضافة pgvector. وعند ضياع قطعة أو اختلاطها، تُقارَن صورة جديدة لها مع البصمات المخزّنة باستخدام بحث تشابه المتجهات (vector similarity search) لتحديد صاحبها فوراً.">
-                                Built a web app to solve a common household problem: clothes getting mixed up between
-                                family members. Each garment is photographed and tagged with its owner, and
-                                TensorFlow.js extracts a visual embedding that is stored in a Supabase Postgres
-                                database using the pgvector extension. When a piece goes missing or gets swapped, a
-                                new photo is matched against the stored embeddings through vector similarity search,
-                                instantly identifying the rightful owner.
-                            </p>
+                            <div class="project-media-wrap">
+                                <figure class="project-media view-project-media"
+                                    data-image="images/2nd_project.png"
+                                    data-title-en="Clothing Owner Identification App"
+                                    data-title-ar="تطبيق التعرف على مالك القطعة"
+                                    role="button"
+                                    tabindex="0"
+                                    aria-label="Click to enlarge screenshot">
+                                    <div class="project-media-inner">
+                                        <img src="images/2nd_project.png" alt="Clothing Owner Identification App Screenshot" loading="lazy">
+                                    </div>
+                                    <div class="project-media-overlay">
+                                        <span class="project-zoom-badge">
+                                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                            <span data-en="Click to enlarge" data-ar="اضغط للتكبير">Click to enlarge</span>
+                                        </span>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal Project</span>
+                                </div>
+                                <h3 data-en="Clothing Owner Identification App" data-ar="تطبيق التعرف على مالك القطعة">Clothing Owner Identification App</h3>
+                                <p data-en="Built a web app to solve a common household problem: clothes getting mixed up between family members. Each garment is photographed and tagged with its owner, and TensorFlow.js extracts a visual embedding that is stored in a Supabase Postgres database using the pgvector extension. When a piece goes missing or gets swapped, a new photo is matched against the stored embeddings through vector similarity search, instantly identifying the rightful owner."
+                                    data-ar="طوّرت تطبيق ويب يحل مشكلة شائعة داخل البيت: اختلاط الملابس بين أفراد العائلة. تُصوَّر كل قطعة وتُربط باسم صاحبها، حيث يستخرج TensorFlow.js بصمة بصرية (embedding) لها وتُخزَّن في قاعدة بيانات Supabase (PostgreSQL) عبر إضافة pgvector. وعند ضياع قطعة أو اختلاطها، تُقارَن صورة جديدة لها مع البصمات المخزّنة باستخدام بحث تشابه المتجهات (vector similarity search) لتحديد صاحبها فوراً.">
+                                    Built a web app to solve a common household problem: clothes getting mixed up between
+                                    family members. Each garment is photographed and tagged with its owner, and
+                                    TensorFlow.js extracts a visual embedding that is stored in a Supabase Postgres
+                                    database using the pgvector extension. When a piece goes missing or gets swapped, a
+                                    new photo is matched against the stored embeddings through vector similarity search,
+                                    instantly identifying the rightful owner.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag">TensorFlow.js</span>
+                                    <span class="project-tag">Supabase</span>
+                                    <span class="project-tag">pgvector</span>
+                                    <span class="project-tag">Vector Search</span>
+                                </div>
+                                <div class="project-actions">
+                                    <button class="project-preview-btn view-project-media" type="button"
+                                        data-image="images/2nd_project.png"
+                                        data-title-en="Clothing Owner Identification App"
+                                        data-title-ar="تطبيق التعرف على مالك القطعة"
+                                        aria-label="Enlarge image preview">
+                                        <i class="fa-solid fa-expand"></i>
+                                        <span data-en="Preview Screenshot" data-ar="معاينة الصورة">Preview Screenshot</span>
+                                    </button>
+                                </div>
+                            </div>
                         </article>
 
                         <article class="entry-card project-card" data-category="ai">
-                            <p class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal
-                                Project</p>
-                            <h3 data-en="Face-Based Attendance System" data-ar="نظام تسجيل الحضور بالتعرف على الوجه">
-                                Face-Based Attendance System</h3>
-                            <figure class="project-media">
-                                <img src="images/3rd_project.png" alt="Face-Based Attendance System Screenshot"
-                                    loading="lazy">
-                            </figure>
-                            <p data-en="A simple and efficient attendance tracking system that uses face recognition, built with Python, OpenCV, and the face_recognition library. The app includes a module to register new people with their name and photo, an attendance module supporting both video-file processing and manual entry, a live system status display, and a daily attendance log."
-                                data-ar="نظام بسيط وفعّال لتسجيل الحضور باستخدام تقنية التعرف على الوجه، مبني بلغة Python ومكتبتي OpenCV وface_recognition. يتضمن التطبيق قسمًا لإضافة الأشخاص الجدد بالاسم والصورة، وقسمًا لتسجيل الحضور عبر معالجة ملفات الفيديو أو الإدخال اليدوي، إضافة إلى عرض لحالة النظام الحالية وسجل يومي لبيانات الحضور.">
-                                A simple and efficient attendance tracking system that uses face recognition, built
-                                with Python, OpenCV, and the face_recognition library. The app includes a module to
-                                register new people with their name and photo, an attendance module supporting both
-                                video-file processing and manual entry, a live system status display, and a daily
-                                attendance log.
-                            </p>
+                            <div class="project-media-wrap">
+                                <figure class="project-media view-project-media"
+                                    data-image="images/3rd_project.png"
+                                    data-title-en="Face-Based Attendance System"
+                                    data-title-ar="نظام تسجيل الحضور بالتعرف على الوجه"
+                                    role="button"
+                                    tabindex="0"
+                                    aria-label="Click to enlarge screenshot">
+                                    <div class="project-media-inner">
+                                        <img src="images/3rd_project.png" alt="Face-Based Attendance System Screenshot" loading="lazy">
+                                    </div>
+                                    <div class="project-media-overlay">
+                                        <span class="project-zoom-badge">
+                                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                            <span data-en="Click to enlarge" data-ar="اضغط للتكبير">Click to enlarge</span>
+                                        </span>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal Project</span>
+                                </div>
+                                <h3 data-en="Face-Based Attendance System" data-ar="نظام تسجيل الحضور بالتعرف على الوجه">Face-Based Attendance System</h3>
+                                <p data-en="A simple and efficient attendance tracking system that uses face recognition, built with Python, OpenCV, and the face_recognition library. The app includes a module to register new people with their name and photo, an attendance module supporting both video-file processing and manual entry, a live system status display, and a daily attendance log."
+                                    data-ar="نظام بسيط وفعّال لتسجيل الحضور باستخدام تقنية التعرف على الوجه، مبني بلغة Python ومكتبتي OpenCV وface_recognition. يتضمن التطبيق قسمًا لإضافة الأشخاص الجدد بالاسم والصورة، وقسمًا لتسجيل الحضور عبر معالجة ملفات الفيديو أو الإدخال اليدوي، إضافة إلى عرض لحالة النظام الحالية وسجل يومي لبيانات الحضور.">
+                                    A simple and efficient attendance tracking system that uses face recognition, built
+                                    with Python, OpenCV, and the face_recognition library. The app includes a module to
+                                    register new people with their name and photo, an attendance module supporting both
+                                    video-file processing and manual entry, a live system status display, and a daily
+                                    attendance log.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">OpenCV</span>
+                                    <span class="project-tag">face_recognition</span>
+                                    <span class="project-tag">Real-time Vision</span>
+                                </div>
+                                <div class="project-actions">
+                                    <button class="project-preview-btn view-project-media" type="button"
+                                        data-image="images/3rd_project.png"
+                                        data-title-en="Face-Based Attendance System"
+                                        data-title-ar="نظام تسجيل الحضور بالتعرف على الوجه"
+                                        aria-label="Enlarge image preview">
+                                        <i class="fa-solid fa-expand"></i>
+                                        <span data-en="Preview Screenshot" data-ar="معاينة الصورة">Preview Screenshot</span>
+                                    </button>
+                                </div>
+                            </div>
                         </article>
 
                         <article class="entry-card project-card" data-category="ai">
-                            <p class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal
-                                Project</p>
-                            <h3 data-en="AI Sleep Detection System" data-ar="نظام كشف النوم بالذكاء الاصطناعي">AI Sleep
-                                Detection System</h3>
-                            <figure class="project-media">
-                                <img src="images/4th_project.png" alt="AI Sleep Detection System Screenshot"
-                                    loading="lazy">
-                            </figure>
-                            <p data-en="A modern desktop application that uses artificial intelligence to detect sleep states from facial images, built with Python, TensorFlow/Keras, and Tkinter, featuring a sleek dark-themed interface."
-                                data-ar="تطبيق سطح مكتب حديث يستخدم الذكاء الاصطناعي للكشف عن حالات النوم من خلال صور الوجه، مبني بلغة Python باستخدام TensorFlow/Keras وTkinter، بواجهة داكنة أنيقة.">
-                                A modern desktop application that uses artificial intelligence to detect sleep states
-                                from facial images, built with Python, TensorFlow/Keras, and Tkinter, featuring a
-                                sleek dark-themed interface.
-                            </p>
+                            <div class="project-media-wrap">
+                                <figure class="project-media view-project-media"
+                                    data-image="images/4th_project.png"
+                                    data-title-en="AI Sleep Detection System"
+                                    data-title-ar="نظام كشف النوم بالذكاء الاصطناعي"
+                                    role="button"
+                                    tabindex="0"
+                                    aria-label="Click to enlarge screenshot">
+                                    <div class="project-media-inner">
+                                        <img src="images/4th_project.png" alt="AI Sleep Detection System Screenshot" loading="lazy">
+                                    </div>
+                                    <div class="project-media-overlay">
+                                        <span class="project-zoom-badge">
+                                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                            <span data-en="Click to enlarge" data-ar="اضغط للتكبير">Click to enlarge</span>
+                                        </span>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-label" data-en="Personal Project" data-ar="مشروع شخصي">Personal Project</span>
+                                </div>
+                                <h3 data-en="AI Sleep Detection System" data-ar="نظام كشف النوم بالذكاء الاصطناعي">AI Sleep Detection System</h3>
+                                <p data-en="A modern desktop application that uses artificial intelligence to detect sleep states from facial images, built with Python, TensorFlow/Keras, and Tkinter, featuring a sleek dark-themed interface."
+                                    data-ar="تطبيق سطح مكتب حديث يستخدم الذكاء الاصطناعي للكشف عن حالات النوم من خلال صور الوجه، مبني بلغة Python باستخدام TensorFlow/Keras وTkinter، بواجهة داكنة أنيقة.">
+                                    A modern desktop application that uses artificial intelligence to detect sleep states
+                                    from facial images, built with Python, TensorFlow/Keras, and Tkinter, featuring a
+                                    sleek dark-themed interface.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">TensorFlow / Keras</span>
+                                    <span class="project-tag">Tkinter</span>
+                                    <span class="project-tag">Machine Learning</span>
+                                </div>
+                                <div class="project-actions">
+                                    <button class="project-preview-btn view-project-media" type="button"
+                                        data-image="images/4th_project.png"
+                                        data-title-en="AI Sleep Detection System"
+                                        data-title-ar="نظام كشف النوم بالذكاء الاصطناعي"
+                                        aria-label="Enlarge image preview">
+                                        <i class="fa-solid fa-expand"></i>
+                                        <span data-en="Preview Screenshot" data-ar="معاينة الصورة">Preview Screenshot</span>
+                                    </button>
+                                </div>
+                            </div>
                         </article>
                     </div>
                 </div>
             </section>
 
             <section id="interests" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="My Interests" data-ar="اهتماماتي">My Interests</h2>
-                    <ul class="interest-list">
-                        <li data-en="Web Development" data-ar="تطوير الويب">Web Development</li>
-                        <li data-en="Mobile Development" data-ar="تطوير التطبيقات المحمولة">Mobile Development</li>
-                        <li data-en="Machine Learning" data-ar="تعلم الآلة">Machine Learning</li>
-                        <li data-en="Deep Learning" data-ar="التعلم العميق">Deep Learning</li>
-                        <li data-en="Football ⚽" data-ar="كرة القدم ⚽">Football ⚽</li>
-                    </ul>
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Focus Areas" data-ar="مجالات الاهتمام">Focus Areas</span>
+                            <h2 data-en="My Interests" data-ar="اهتماماتي">My Interests</h2>
+                        </div>
+                    </div>
+                    <div class="section-body">
+                        <ul class="interest-list">
+                            <li class="interest-tag"><i class="fa-solid fa-code"></i><span data-en="Web Development" data-ar="تطوير الويب">Web Development</span></li>
+                            <li class="interest-tag"><i class="fa-solid fa-mobile-screen-button"></i><span data-en="Mobile Development" data-ar="تطوير التطبيقات المحمولة">Mobile Development</span></li>
+                            <li class="interest-tag"><i class="fa-solid fa-brain"></i><span data-en="Machine Learning" data-ar="تعلم الآلة">Machine Learning</span></li>
+                            <li class="interest-tag"><i class="fa-solid fa-network-wired"></i><span data-en="Deep Learning" data-ar="التعلم العميق">Deep Learning</span></li>
+                            <li class="interest-tag"><i class="fa-regular fa-futbol"></i><span data-en="Football" data-ar="كرة القدم">Football</span></li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
             <section id="skills" class="content-section reveal-section skills">
-                <div class="container split-head">
-                    <h2 data-ar="مهاراتي" data-en="My Skills">My Skills</h2>
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Technical Arsenal" data-ar="الترسانة التقنية">Technical Arsenal</span>
+                            <h2 data-ar="مهاراتي" data-en="My Skills">My Skills</h2>
+                        </div>
+                    </div>
                     <div class="section-body">
                         <p class="skills-intro" data-ar="التقنيات والأدوات التي أتقنها في مجال البرمجة وتطوير الويب"
                             data-en="Technologies and tools I master in programming and web development">
@@ -478,19 +687,24 @@
             </section>
 
             <section id="certificates" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="Certificates" data-ar="الشهادات">Certificates</h2>
-                    <div class="section-body">
-                        <p data-en="Here are some of my professional certifications:"
-                            data-ar="إليكم بعض شهاداتي المهنية:">
-                            Here are some of my professional certifications:
-                        </p>
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Credentials" data-ar="الشهادات والاعتمادات">Credentials</span>
+                            <h2 data-en="Certificates" data-ar="الشهادات">Certificates</h2>
+                        </div>
                         <div class="filter-bar" data-filter-group="certificates">
                             <button class="filter-btn active" type="button" data-filter="all" data-en="All" data-ar="الكل">All</button>
                             <button class="filter-btn" type="button" data-filter="ai" data-en="AI &amp; Cloud" data-ar="الذكاء الاصطناعي والسحابي">AI &amp; Cloud</button>
                             <button class="filter-btn" type="button" data-filter="robotics" data-en="Robotics &amp; IoT" data-ar="الروبوتات والأنظمة">Robotics &amp; IoT</button>
                             <button class="filter-btn" type="button" data-filter="general" data-en="General" data-ar="عام">General</button>
                         </div>
+                    </div>
+                    <div class="section-body">
+                        <p class="certificates-intro" data-en="Here are some of my professional certifications:"
+                            data-ar="إليكم بعض شهاداتي المهنية:">
+                            Here are some of my professional certifications:
+                        </p>
                         <div class="certificates-grid">
                             <article class="certificate-item" data-category="general">
                                 <div class="certificate-frame">
@@ -645,10 +859,15 @@
             </section>
 
             <section id="contact" class="content-section reveal-section">
-                <div class="container split-head">
-                    <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+                <div class="container">
+                    <div class="section-header-wide">
+                        <div class="section-title-block">
+                            <span class="section-kicker" data-en="Connect" data-ar="قنوات التواصل">Connect</span>
+                            <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+                        </div>
+                    </div>
                     <div class="section-body">
-                        <p data-en="I'd love to connect with you! Feel free to reach out through any of these platforms:"
+                        <p class="contact-intro" data-en="I'd love to connect with you! Feel free to reach out through any of these platforms:"
                             data-ar="يسعدني التواصل معك! لا تتردد في التواصل عبر أي من هذه المنصات:">
                             I'd love to connect with you! Feel free to reach out through any of these platforms:
                         </p>
@@ -751,14 +970,55 @@
         </footer>
     </div>
 
-    <div id="certificate-modal" class="certificate-modal" aria-hidden="true">
+    <!-- Document & Certificate Preview Modal -->
+    <div id="certificate-modal" class="certificate-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-doc-title">
+        <div class="modal-backdrop"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modal-close" aria-label="Close">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span data-en="Back" data-ar="رجوع">Back</span>
-            </button>
-            <div class="certificate-viewer">
+            <div class="modal-top-bar">
+                <button class="modal-close" id="modal-close" type="button" aria-label="Close preview">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span data-en="Back" data-ar="رجوع">Back</span>
+                </button>
+                <div class="modal-doc-title-wrap">
+                    <span class="modal-doc-badge" data-en="Document Preview" data-ar="معاينة المستند">Document Preview</span>
+                    <h3 class="modal-doc-title" id="modal-doc-title"></h3>
+                </div>
+                <div class="modal-top-actions">
+                    <a id="modal-pdf-download" href="" class="modal-action-btn" download target="_blank" rel="noopener noreferrer" title="Download PDF">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span data-en="Download PDF" data-ar="تحميل PDF">Download PDF</span>
+                    </a>
+                </div>
+            </div>
+            <div class="certificate-viewer" id="certificate-viewer">
+                <div class="doc-image-container" id="doc-image-container">
+                    <img id="modal-doc-img" src="" alt="Document Preview">
+                </div>
                 <iframe id="certificate-frame" src="" title="Certificate preview" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Image Preview Lightbox Modal -->
+    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="image-modal-title">
+        <div class="image-modal-backdrop"></div>
+        <div class="image-modal-container">
+            <div class="image-modal-header">
+                <div class="image-modal-title-wrap">
+                    <span class="image-modal-badge" data-en="Screenshot Preview" data-ar="معاينة الصورة">Screenshot Preview</span>
+                    <h3 class="image-modal-title" id="image-modal-title"></h3>
+                </div>
+                <button class="image-modal-close" id="image-modal-close" type="button" aria-label="Close preview" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="image-modal-body">
+                <div class="image-modal-stage">
+                    <img id="image-modal-img" src="" alt="Project Preview">
+                </div>
+            </div>
+            <div class="image-modal-footer">
+                <span class="image-modal-hint" data-en="Press ESC or click anywhere outside to close" data-ar="اضغط ESC أو انقر في أي مكان بالخارج للإغلاق">Press ESC or click anywhere outside to close</span>
             </div>
         </div>
     </div>
@@ -772,7 +1032,7 @@
         <span class="toast-text"></span>
     </div>
 
-    <script src="js/script.js?v=20260921-10"></script>
+    <script src="js/script.js?v=20260929-6"></script>
 </body>
 
 </html>

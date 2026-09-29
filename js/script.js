@@ -10,12 +10,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const revealSections = document.querySelectorAll(".reveal-section");
 
     const modal = document.getElementById("certificate-modal");
+    const modalBackdrop = modal ? modal.querySelector(".modal-backdrop") : null;
     const modalClose = document.getElementById("modal-close");
+    const modalDocTitle = document.getElementById("modal-doc-title");
+    const modalPdfDownload = document.getElementById("modal-pdf-download");
+    const certificateViewer = document.getElementById("certificate-viewer");
+    const docImageContainer = document.getElementById("doc-image-container");
+    const modalDocImg = document.getElementById("modal-doc-img");
     const certificateFrame = document.getElementById("certificate-frame");
     const viewCertificateLinks = document.querySelectorAll(".view-certificate");
     const backToTopBtn = document.getElementById("back-to-top");
 
     let currentLang = localStorage.getItem("preferred-language") || "en";
+    let activeProjectData = null;
+    let activeDocData = null;
+    let lockedScrollY = 0;
+    let isScrollLocked = false;
 
     function applyLanguage(lang) {
         if (lang === "ar") {
@@ -44,6 +54,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (text) el.textContent = text;
                 }
             });
+        }
+
+        const currentImageModalTitle = document.getElementById("image-modal-title");
+        if (activeProjectData && currentImageModalTitle) {
+            currentImageModalTitle.textContent = lang === "ar" ? (activeProjectData.titleAr || activeProjectData.titleEn || "") : (activeProjectData.titleEn || activeProjectData.titleAr || "");
+        }
+
+        const currentDocModalTitle = document.getElementById("modal-doc-title");
+        if (activeDocData && currentDocModalTitle) {
+            currentDocModalTitle.textContent = lang === "ar" ? (activeDocData.titleAr || activeDocData.titleEn || "") : (activeDocData.titleEn || activeDocData.titleAr || "");
         }
 
         if (backToTopBtn) {
@@ -324,6 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let isScrollTicking = false;
     function onThrottledScroll() {
+        if (isScrollLocked) return;
         if (!isScrollTicking) {
             window.requestAnimationFrame(() => {
                 handleScroll();
@@ -342,19 +363,122 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    let scrollPosition = 0;
+    /* Scroll Lock Utilities */
+    function lockScroll() {
+        if (isScrollLocked) return;
+        lockedScrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    function closeModal() {
-        if (!modal || !modalClose || !certificateFrame) return;
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        if (scrollbarWidth > 0) {
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+            const topNav = document.getElementById("top-nav");
+            if (topNav) topNav.style.paddingRight = `${scrollbarWidth}px`;
+        }
+
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${lockedScrollY}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+        document.documentElement.classList.add("modal-locked");
+        document.body.classList.add("modal-locked");
+        isScrollLocked = true;
+
+        if (bgVideo && typeof bgVideo.pause === "function") {
+            try {
+                bgVideo.pause();
+            } catch (e) {}
+        }
+    }
+
+    function unlockScroll() {
+        if (!isScrollLocked) return;
+
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+        document.body.style.paddingRight = "";
+        const topNav = document.getElementById("top-nav");
+        if (topNav) topNav.style.paddingRight = "";
+
+        document.documentElement.classList.remove("modal-locked");
+        document.body.classList.remove("modal-locked");
+        isScrollLocked = false;
+
+        window.scrollTo(0, lockedScrollY);
+
+        if (bgVideo && typeof bgVideo.play === "function" && !document.hidden) {
+            const playPromise = bgVideo.play();
+            if (playPromise && typeof playPromise.catch === "function") {
+                playPromise.catch(() => {});
+            }
+        }
+    }
+
+    /* Document & Certificate Modal Logic */
+    function openDocModal(docPath, previewImg, titleEn, titleAr) {
+        if (!modal) return;
+
+        activeDocData = { docPath, previewImg, titleEn, titleAr };
+
+        if (modalDocTitle) {
+            const displayTitle = currentLang === "ar" ? (titleAr || titleEn || "") : (titleEn || titleAr || "");
+            modalDocTitle.textContent = displayTitle;
+        }
+
+        if (modalPdfDownload) {
+            if (docPath) {
+                modalPdfDownload.href = docPath;
+                modalPdfDownload.style.display = "inline-flex";
+            } else {
+                modalPdfDownload.style.display = "none";
+            }
+        }
+
+        if (previewImg) {
+            if (modalDocImg) {
+                modalDocImg.src = previewImg;
+                modalDocImg.alt = currentLang === "ar" ? (titleAr || titleEn || "معاينة المستند") : (titleEn || titleAr || "Document Preview");
+            }
+            if (docImageContainer) docImageContainer.style.display = "flex";
+            if (certificateFrame) {
+                certificateFrame.style.display = "none";
+                certificateFrame.src = "";
+            }
+        } else if (docPath) {
+            if (docImageContainer) docImageContainer.style.display = "none";
+            if (modalDocImg) modalDocImg.src = "";
+            if (certificateFrame) {
+                certificateFrame.style.display = "block";
+                const isPdf = docPath.toLowerCase().endsWith(".pdf");
+                certificateFrame.src = isPdf ? `${docPath}#view=FitH&zoom=page-fit` : docPath;
+            }
+        }
+
+        if (certificateViewer) {
+            certificateViewer.scrollTop = 0;
+        }
+
+        lockScroll();
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeDocModal() {
+        if (!modal) return;
 
         modal.classList.remove("active");
         modal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
+        activeDocData = null;
 
-        window.scrollTo(0, scrollPosition);
+        unlockScroll();
 
         setTimeout(() => {
-            certificateFrame.src = "";
+            if (certificateFrame) certificateFrame.src = "";
+            if (modalDocImg) modalDocImg.src = "";
+            if (modalDocTitle) modalDocTitle.textContent = "";
         }, 180);
     }
 
@@ -362,35 +486,116 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("click", function (event) {
             event.preventDefault();
 
-            const certificatePath = this.getAttribute("data-certificate");
-            if (!certificatePath || !modal || !certificateFrame) return;
+            const docPath = this.getAttribute("data-certificate") || "";
+            const cardItem = this.closest(".certificate-item");
+            const previewImg = this.getAttribute("data-preview-img") || (cardItem ? cardItem.querySelector("img")?.getAttribute("src") : "");
 
-            scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            const isPdf = certificatePath.toLowerCase().endsWith(".pdf");
-            const pdfUrl = isPdf ? `${certificatePath}#view=FitH&zoom=page-fit` : certificatePath;
+            const cardH3 = cardItem ? cardItem.querySelector("h3") : null;
+            const titleEn = this.getAttribute("data-title-en") || (cardH3 ? cardH3.getAttribute("data-en") || cardH3.textContent.trim() : "");
+            const titleAr = this.getAttribute("data-title-ar") || (cardH3 ? cardH3.getAttribute("data-ar") || cardH3.textContent.trim() : "");
 
-            certificateFrame.src = pdfUrl;
-            modal.classList.add("active");
-            modal.setAttribute("aria-hidden", "false");
-            document.body.classList.add("modal-open");
+            openDocModal(docPath, previewImg, titleEn, titleAr);
         });
     });
 
     if (modalClose) {
-        modalClose.addEventListener("click", closeModal);
+        modalClose.addEventListener("click", closeDocModal);
+    }
+
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener("click", closeDocModal);
     }
 
     if (modal) {
         modal.addEventListener("click", function (event) {
             if (event.target === modal) {
-                closeModal();
+                closeDocModal();
+            }
+        });
+    }
+
+    /* Project Image Lightbox Modal */
+    const imageModal = document.getElementById("image-modal");
+    const imageModalImg = document.getElementById("image-modal-img");
+    const imageModalTitle = document.getElementById("image-modal-title");
+    const imageModalClose = document.getElementById("image-modal-close");
+    const imageModalBackdrop = imageModal ? imageModal.querySelector(".image-modal-backdrop") : null;
+    const viewProjectMediaElements = document.querySelectorAll(".view-project-media");
+
+    function openImageModal(imgSrc, titleEn, titleAr) {
+        if (!imageModal || !imageModalImg) return;
+
+        activeProjectData = { imgSrc, titleEn, titleAr };
+
+        imageModalImg.src = imgSrc;
+        const currentTitle = currentLang === "ar" ? (titleAr || titleEn || "") : (titleEn || titleAr || "");
+        if (imageModalTitle) {
+            imageModalTitle.textContent = currentTitle;
+        }
+        imageModalImg.alt = currentTitle;
+
+        lockScroll();
+        imageModal.classList.add("active");
+        imageModal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeImageModal() {
+        if (!imageModal) return;
+
+        imageModal.classList.remove("active");
+        imageModal.setAttribute("aria-hidden", "true");
+        activeProjectData = null;
+
+        unlockScroll();
+
+        setTimeout(() => {
+            if (imageModalImg) imageModalImg.src = "";
+            if (imageModalTitle) imageModalTitle.textContent = "";
+        }, 180);
+    }
+
+    viewProjectMediaElements.forEach((el) => {
+        el.addEventListener("click", function (event) {
+            event.preventDefault();
+            const imgSrc = this.getAttribute("data-image") || (this.querySelector("img") ? this.querySelector("img").getAttribute("src") : "");
+            const titleEn = this.getAttribute("data-title-en") || "";
+            const titleAr = this.getAttribute("data-title-ar") || "";
+            if (imgSrc) {
+                openImageModal(imgSrc, titleEn, titleAr);
+            }
+        });
+
+        el.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                this.click();
+            }
+        });
+    });
+
+    if (imageModalClose) {
+        imageModalClose.addEventListener("click", closeImageModal);
+    }
+
+    if (imageModalBackdrop) {
+        imageModalBackdrop.addEventListener("click", closeImageModal);
+    }
+
+    if (imageModal) {
+        imageModal.addEventListener("click", function (event) {
+            if (event.target === imageModal) {
+                closeImageModal();
             }
         });
     }
 
     document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && modal && modal.classList.contains("active")) {
-            closeModal();
+        if (event.key === "Escape") {
+            if (imageModal && imageModal.classList.contains("active")) {
+                closeImageModal();
+            } else if (modal && modal.classList.contains("active")) {
+                closeDocModal();
+            }
         }
     });
 });
